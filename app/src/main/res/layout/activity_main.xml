@@ -1,0 +1,270 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="#ff11a3f1"
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+       <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@mipmap/img_name"
+        android:layout_gravity="center"
+
+        />
+        <ProgressBar
+            android:id="@+id/pBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:visibility="invisible"
+
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <!-- Framelayout to display Fragments -->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:id="@+id/r1"
+            android:layout_height="fill_parent">
+            <fragment
+                android:id="@+id/googleMap"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+                class="com.google.android.gms.maps.SupportMapFragment"
+
+                />
+            <com.example.admin.blynked.CircleProgressBar
+                android:id="@+id/pBar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                app:mlpb_enable_circle_background="false"
+                android:visibility="invisible"
+                app:mlpb_arrow_width="10dp"
+                app:mlpb_progress_stoke_width="5dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@id/googleMap"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/spinnerrr"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@mipmap/layer_white_100"
+                    />
+            </LinearLayout>
+
+
+            <SlidingDrawer
+                android:id="@+id/slide"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+
+                android:content="@+id/content"
+                android:handle="@+id/footer" >
+
+                <RelativeLayout
+                    android:id="@+id/footer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/border1"
+                  android:padding="5dp"
+                    >
+
+                    <com.example.admin.blynked.RoundedImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/proff"
+                        android:scaleType="fitCenter"
+android:visibility="visible"
+
+                        />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/dp"
+                        android:id="@+id/me"
+                        android:paddingLeft="10dp"
+                        android:text="You have no Blynked and are moving at"
+                        android:textStyle="bold"
+android:layout_toLeftOf="@+id/dp1"
+
+                        />
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/me"
+                        android:layout_toRightOf="@+id/dp"
+                        android:id="@+id/spd"
+                        android:text="0"
+                        android:paddingLeft="10dp"
+                        android:textSize="25dp"
+
+
+                        />
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/me"
+                        android:id="@+id/st"
+
+                        android:layout_toRightOf="@+id/spd"
+                        android:text="Km/hr"
+                     android:layout_alignBaseline="@+id/spd"
+
+                        />
+
+                    <com.example.admin.blynked.RoundedImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/dp1"
+                     android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/proff"
+                        android:scaleType="fitCenter"
+android:visibility="invisible"
+
+                        />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:id="@+id/content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp">
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ff969696" />
+                        <Button android:id="@+id/sharem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:text="Auto-Share"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffffff"
+                            android:paddingTop="2dp"
+                            android:drawableTop="@mipmap/icn_share_action_drawer"
+                            android:layout_weight="1"
+                            android:background="#ff11a3f1"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ff969696" />
+                        <Button android:id="@+id/requestm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:text="Request"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffffff"
+                            android:paddingTop="2dp"
+                            android:drawableTop="@mipmap/icn_request_action_drawer"
+                            android:layout_weight="1"
+                            android:background="#ff11a3f1"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ff969696" />
+                        <Button android:id="@+id/favm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:text="Favourite"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffffff"
+                            android:paddingTop="2dp"
+                            android:layout_weight="1"
+                            android:drawableTop="@mipmap/icn_fav_action_drawer"
+                            android:background="#ff11a3f1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ff969696" />
+
+
+
+
+                </LinearLayout>
+            </SlidingDrawer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+        </FrameLayout>
+        <!-- Listview to display slider menu -->
+
+        <LinearLayout
+            android:id="@+id/drawerll"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|start"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical" >
+
+
+            <ListView
+                android:id="@+id/nav_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:choiceMode="singleChoice"
+                android:dividerHeight="1dp"
+                android:background="@mipmap/bg_menu_drawer"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
+

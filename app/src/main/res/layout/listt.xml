@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    android:padding="15dp"
+       >
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            />
+        <TextView
+            android:id="@+id/contact_name_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:textColor="#ff11a3f1"
+android:layout_toRightOf="@+id/imageView11"
+            android:textSize="15dp"
+android:paddingLeft="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <TextView
+        android:id="@+id/contact_number_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_toRightOf="@+id/imageView11"
+        android:layout_below="@+id/contact_name_log"
+
+        />
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/contact_name_log"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+
+        />
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_toRightOf="@+id/imageView11"
+        android:layout_below="@+id/contact_number_log"
+        />
+
+    </RelativeLayout>
+
+
+

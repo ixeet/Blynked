@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:padding="30dp"
+    android:layout_centerVertical="true"
+android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    >
+
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:id="@+id/l"
+
+        android:visibility="visible"
+        android:layout_alignTop="@+id/min"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignStart="@+id/button1">
+
+        <TextView android:id="@+id/hr"
+            android:text="HH"
+            android:textStyle="bold"
+            android:textColor="#ff11a3f1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <Button
+            android:id="@+id/upButton"
+            android:scaleType="center"
+
+
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/arrow_up"
+            />
+
+        <TextView
+            android:id="@+id/numberEditText"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg3"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textColor="#ff000000"
+            android:inputType="number" >
+
+            <requestFocus />
+        </TextView>
+
+        <Button
+            android:id="@+id/downButton"
+            android:layout_width="60dp"
+
+            android:scaleType="center"
+            android:layout_height="40dp"
+
+            android:background="@mipmap/arrow_down" />
+    </LinearLayout>
+
+
+
+
+    <Button android:id="@+id/button1"
+        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="#ff11a3f1"
+        android:textColor="#ffffffff"
+        android:text="Set"/>
+
+</RelativeLayout>

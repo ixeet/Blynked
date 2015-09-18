@@ -1,0 +1,420 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="#ff11a3f1"
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Auto Share"
+
+            android:layout_gravity="start"
+
+            android:textColor="#ffffffff"
+            android:textSize="20sp"/>
+        <ProgressBar
+            android:id="@+id/pBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:visibility="invisible"
+
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="fill_parent"
+            android:id="@+id/r1"
+            android:paddingBottom="20dp"
+            android:layout_width="fill_parent">
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+                    <com.example.admin.blynked.CircleProgressBar
+                        android:id="@+id/pBar"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        app:mlpb_enable_circle_background="false"
+                        android:visibility="invisible"
+                        app:mlpb_arrow_width="10dp"
+                        app:mlpb_progress_stoke_width="5dp"
+                        />
+                    <RelativeLayout android:layout_height="wrap_content" android:id="@+id/g" android:layout_width="wrap_content" android:background="@drawable/border1">
+                        <fragment
+                            android:id="@+id/googleMap"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+
+
+                            class="com.google.android.gms.maps.SupportMapFragment"></fragment>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/all"
+                        android:layout_below="@+id/g"
+
+                        >
+                        <RelativeLayout android:id="@+id/source"
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:padding="4dp"
+                            >
+                            <ImageView android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:id="@+id/i0"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+
+                                android:src="@mipmap/icn_source"/>
+                            <RelativeLayout android:layout_width="wrap_content"
+                                android:padding="5dp"
+                                android:layout_centerVertical="true"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/i0">
+                                <TextView android:id="@+id/selects" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ff11a3f1"
+                                    android:textStyle="bold" android:text="Source"
+
+                                    />
+                                <TextView android:id="@+id/s"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Define your source"
+                                    android:textColor="#ff525252"
+                                    android:textSize="13dp"
+                                    android:layout_below="@+id/selects"
+                                    />
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#ff11a3f1"
+                            android:layout_below="@+id/source"
+                            android:id="@+id/vs"/>
+
+
+                        <RelativeLayout android:id="@+id/rcp" android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:layout_below="@+id/vs"
+                            android:padding="4dp">
+
+                            <ImageView android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:id="@+id/i11"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/icn_recipients"/>
+                            <RelativeLayout android:layout_width="wrap_content"
+                                android:padding="5dp"
+                                android:layout_centerVertical="true"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/i11">
+                                <TextView android:id="@+id/selectr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ff11a3f1"
+                                    android:textStyle="bold" android:text="Contacts"
+                                    />
+                                <TextView android:id="@+id/r"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Select Contact"
+                                    android:textColor="#ff525252"
+                                    android:textSize="13dp"
+                                    android:layout_below="@+id/selectr"
+                                    />
+                            </RelativeLayout>
+                            <ImageView android:layout_height="20dp"
+                                android:layout_width="20dp"
+                                android:id="@+id/i21"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/img_right_arrow"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#ff11a3f1"
+                            android:layout_below="@+id/rcp"
+                            android:id="@+id/v2"/>
+                        <RelativeLayout android:id="@+id/dur" android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:layout_below="@+id/v2"
+                            android:padding="4dp">
+
+                            <ImageView android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:id="@+id/i12"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/icn_duration"/>
+                            <RelativeLayout android:layout_width="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:padding="5dp"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/i12">
+                                <TextView android:id="@+id/selectdur" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ff11a3f1"
+                                    android:textStyle="bold" android:text="Duration"
+                                    />
+                                <TextView android:id="@+id/du"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Set your duration time"
+                                    android:textColor="#ff525252"
+                                    android:textSize="13dp"
+                                    android:layout_below="@+id/selectdur"
+                                    />
+                            </RelativeLayout>
+                            <ImageView android:layout_height="20dp"
+                                android:layout_width="20dp"
+                                android:id="@+id/i22"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/img_right_arrow"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#ff11a3f1"
+                            android:layout_below="@+id/dur"
+                            android:id="@+id/v3"/>
+                        <RelativeLayout android:id="@+id/msgt" android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:layout_below="@+id/v3"
+                            android:padding="4dp">
+
+                            <ImageView android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:id="@+id/i12t"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/icn_duration"/>
+                            <RelativeLayout android:layout_width="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:padding="5dp"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/i12t">
+                                <TextView android:id="@+id/selectdurt" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ff11a3f1"
+                                    android:textStyle="bold" android:text="Message limit"
+                                    />
+                                <TextView android:id="@+id/dut"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Set limit to send message"
+                                    android:textColor="#ff525252"
+                                    android:textSize="13dp"
+                                    android:layout_below="@+id/selectdurt"
+                                    />
+                            </RelativeLayout>
+                            <ImageView android:layout_height="20dp"
+                                android:layout_width="20dp"
+                                android:id="@+id/i22t"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/img_right_arrow"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#ff11a3f1"
+                            android:layout_below="@+id/msgt"
+                            android:id="@+id/v3t"/>
+                        <RelativeLayout android:id="@+id/msg" android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:layout_below="@+id/v3t"
+                            android:padding="4dp">
+
+                            <ImageView android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:id="@+id/i13"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:src="@mipmap/icn_message"/>
+                            <RelativeLayout android:layout_width="wrap_content" android:padding="4dp" android:layout_centerVertical="true" android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/i13">
+                                <TextView android:id="@+id/selectmsg" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ff11a3f1"
+                                    android:textStyle="bold" android:text="Message"
+                                    />
+                                <TextView android:id="@+id/msgg"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Send a message"
+                                    android:textSize="13dp"
+                                    android:textColor="#ff525252"
+                                    android:layout_below="@+id/selectmsg"
+                                    />
+                            </RelativeLayout>
+                            <ImageView android:layout_height="20dp"
+                                android:layout_width="20dp"
+                                android:id="@+id/i23"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/img_right_arrow"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#ff11a3f1"
+                            android:layout_below="@+id/msg"
+                            android:id="@+id/v4"/>
+
+                        <RelativeLayout android:id="@+id/dest"
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:layout_below="@+id/v4"
+                            android:padding="5dp"
+
+                            >
+
+                            <ImageView android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:id="@+id/i1"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+
+                                android:src="@mipmap/icn_destination"/>
+                            <RelativeLayout android:layout_width="wrap_content" android:padding="5dp" android:layout_centerVertical="true" android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/i1">
+                                <TextView android:id="@+id/selectd" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:text="Destination"
+                                    android:textColor="#ff11a3f1"
+
+                                    />
+                                <TextView android:id="@+id/right" android:layout_height="wrap_content"
+                                    android:textSize="12dp" android:layout_width="wrap_content" android:text="(Optional)"
+                                    android:layout_toRightOf="@+id/selectd" android:textColor="#ff969696"/>
+                                <TextView android:id="@+id/d"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Define your destination"
+                                    android:textColor="#ff525252"
+                                    android:textSize="13dp"
+                                    android:layout_below="@+id/selectd"
+                                    />
+                            </RelativeLayout>
+                            <ImageView android:layout_height="20dp"
+                                android:layout_width="20dp"
+                                android:id="@+id/i2"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/img_right_arrow"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#ff11a3f1"
+                            android:layout_below="@+id/dest"
+                            android:id="@+id/v1"/>
+                        <RelativeLayout android:id="@+id/rrrr" android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"  android:layout_below="@+id/v1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="30dp">
+                            <Button android:id="@+id/share" android:layout_width="150dp"
+                                android:layout_height="40dp"
+
+                                android:textAllCaps="false"
+
+
+
+
+                                android:textColor="#ffffffff"
+                                android:background="#ff11a3f1"
+                                android:text="Send"
+                                android:textStyle="bold"/>
+                            <Button
+                                android:id="@+id/fav"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+
+                                android:textAllCaps="false"
+                                android:layout_alignParentBottom="true"
+
+                                android:layout_centerHorizontal="true"
+                                android:textColor="#ffffffff"
+                                android:background="#ff11a3f1"
+                                android:text="Set Favourite"
+                                android:textStyle="bold"
+                                android:visibility="invisible"
+                                />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+        </FrameLayout>
+
+        <!-- Listview to display slider menu -->
+
+        <LinearLayout
+            android:id="@+id/drawerll"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|start"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical" >
+
+
+
+            <ListView
+                android:id="@+id/nav_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:choiceMode="singleChoice"
+                android:dividerHeight="1dp"
+                android:background="@mipmap/bg_menu_drawer"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
