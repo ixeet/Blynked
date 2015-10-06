@@ -138,15 +138,15 @@ public class Otp extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* Intent i1 = new Intent(Otp.this, MainActivity.class);
+                Intent i1 = new Intent(Otp.this, MainActivity.class);
                 //statusCheck();
                 startActivity(i1);
-                finish();*/
+                finish();
                 n=name.getText().toString();
                 e=email.getText().toString();
                 progressBar = (CircleProgressBar) findViewById(R.id.progressWithoutBg);
                // Toast.makeText(Otp.this,p , Toast.LENGTH_SHORT).show();
-                if(!n.equals("")&& (Utility.validate(e))&&(!p.equals("p"))) {
+               /* if(!n.equals("")&& (Utility.validate(e))&&(!p.equals("p"))) {
                     registerInBackground(n, e);
                     progressBar.setColorSchemeResources(android.R.color.holo_blue_light);
                     progressBar.setProgress(0);
@@ -187,7 +187,7 @@ public class Otp extends Activity {
                     if(!Utility.validate(e))
                     {
                         Toast.makeText(Otp.this, "Please enter valid email ID" , Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
 
 
 //        progress1.setColorSchemeResources(android.R.color.holo_blue_bright);

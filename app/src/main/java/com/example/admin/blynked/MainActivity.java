@@ -413,8 +413,8 @@ String idd=""+g.gets();
             try {
                 JSONArray jArray = new JSONArray(c);
                 Parent.put("IMEI", jArray);
-                /*Toast.makeText(getApplicationContext(), "" + Parent, Toast.LENGTH_LONG).show();
-                Log.d("araaa",Parent.toString());*/
+                Toast.makeText(getApplicationContext(), "" + Parent, Toast.LENGTH_LONG).show();
+                Log.d("araaa",Parent.toString());
                 HttpClient client = new DefaultHttpClient();
                 HttpPost post = new HttpPost(SHARE_URL);
                 StringEntity se = new StringEntity( Parent.toString());

@@ -24,7 +24,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,6 +45,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -93,6 +98,8 @@ public class HistoryActivity extends ActionBarActivity {
     ListView list_his;
     int flaggg;
     int flag;
+    TelephonyManager mngr;
+    String uid;
     GridLayout glayout;
     String[] name1;
     String[] time;
@@ -113,6 +120,8 @@ public class HistoryActivity extends ActionBarActivity {
         setContentView(com.example.admin.blynked.R.layout.activity_history);
         g = (Globals) this.getApplication();
         timer = g.gettimer();
+        mngr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        uid = mngr.getDeviceId();
         tool = (Toolbar) findViewById(R.id.tool_bar);
         sqliteHelper1 = new SqliteHelper1(this);
         sqliteHelper2 = new SqliteHelper2(this);
@@ -817,6 +826,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 sqliteHelper2.saveUser(idd, 1);
                             }
+                            new Expire().execute();
                             // zoomImageFromThumb(image, selectedImage);
                             button.setVisibility(View.INVISIBLE);
                             button1.setVisibility(View.VISIBLE);
@@ -866,7 +876,60 @@ public class HistoryActivity extends ActionBarActivity {
             p1--;
         }
     }
+    class Expire extends AsyncTask<String, String, String> {
 
+        /**
+         * Before starting background thread Show Progress Dialog
+         * */
+
+        String response;
+        boolean failure = false;
+        String gender;
+        int mflag,eflag;
+        int success;
+        String bg;
+        String c = null;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar =(CircleProgressBar)findViewById(R.id.pBar);
+            progressBar.setColorSchemeResources(android.R.color.holo_blue_light);
+            progressBar.setProgress(0);
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected String doInBackground(String... args) {
+            // TODO Auto-generated method stub
+            // Check for success tag
+
+            try {
+
+
+
+                String EXPIRE_URL ="http://191.239.57.54:8080/Blynk/StopShare?imeiNo="+uid;
+                GetJsonObject json=new GetJsonObject();
+                response =json.getWebServceObj(EXPIRE_URL);
+                Log.d("Stop response",response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return response;
+
+        }
+        /**
+         * After completing background task Dismiss the progress dialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once product deleted
+
+            progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(HistoryActivity.this,file_url, Toast.LENGTH_LONG).show();
+
+        }
+
+    }
     public static Bitmap decodeBase64(String input) {
         byte[] decodedByte = Base64.decode(input, 0);
         BitmapFactory.Options options = new BitmapFactory.Options();

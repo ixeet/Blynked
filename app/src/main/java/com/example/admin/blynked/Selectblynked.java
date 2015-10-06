@@ -382,7 +382,7 @@ public class Selectblynked extends ActionBarActivity implements  View.OnClickLis
                 stringbuilder.append(line);
 
             pK = stringbuilder.toString();
-            //Log.d("Returned",pK);
+            Log.d("Returned",pK);
 
             try {
                 JSONObject jsonObj = new JSONObject(pK);

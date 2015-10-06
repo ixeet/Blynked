@@ -197,7 +197,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
     private static final String PLACES_API_BASE1 = "http://maps.googleapis.com/maps/api/directions/json";
     private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
     private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
-    private static final String INITIATE_URL="http://192.168.0.18:8080/Blynk/InitiateTracker";
+    private static final String INITIATE_URL="http://191.239.57.54:8080/Blynk/InitiateTracker";
     private static final String DATAPOST_URL="http://191.239.57.54:8080/Blynk/TrackUser";
     private static final String OUT_JSON = "/json";
     TextView t1,t2;
@@ -876,17 +876,17 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 } else {
 
                                     new Initiate1().execute();
-                                    //Toast.makeText(getApplicationContext(), "Service calling ", Toast.LENGTH_LONG).show();
-                                }
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Current not available", Toast.LENGTH_SHORT).show();
-                            }
-                            CountDownTimer countDownTimer = new CountDownTimer(timeee, 1000) {
+            //Toast.makeText(getApplicationContext(), "Service calling ", Toast.LENGTH_LONG).show();
+        }
+    } else {
+        Toast.makeText(getApplicationContext(), "Current not available", Toast.LENGTH_SHORT).show();
+    }
+    CountDownTimer countDownTimer = new CountDownTimer(timeee, 1000) {
 
-                                @Override
-                                public void onTick(long millisUntilFinished) {
+        @Override
+        public void onTick(long millisUntilFinished) {
 
-                                    g.setData(100);
+            g.setData(100);
                           /*  if(isNetworkAvailable()) {
                                 locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
                                 Criteria criteria = new Criteria();
@@ -937,43 +937,43 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 locationManager.removeUpdates(Share_main.this);
                              //   Toast.makeText(getApplicationContext(), "You are not connected to internet right now.Services will be called after internet connectivity", Toast.LENGTH_SHORT).show();
                             }*/
-                                    //txt.setText("seconds remaining: " + millisUntilFinished / 1000);
-                                    String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished), TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
-                                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
-                                    System.out.println(hms);
-                                    g.setsstatus(1);
-                                    // txt.setText(hms);
-                                    time1 = millisUntilFinished;
-                                    // time1=4;
-                                    flag = 0;
-                                    fs = 0;
+            //txt.setText("seconds remaining: " + millisUntilFinished / 1000);
+            String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished), TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+                    TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
+            System.out.println(hms);
+            g.setsstatus(1);
+            // txt.setText(hms);
+            time1 = millisUntilFinished;
+            // time1=4;
+            flag = 0;
+            fs = 0;
 
 
-                                    boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
+            boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
 
-                                    //}
-                                }
+            //}
+        }
 
-                                @Override
-                                public void onFinish() {
-                                    SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+        @Override
+        public void onFinish() {
+            SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
 
-                                    SharedPreferences.Editor editor = shared1.edit();
+            SharedPreferences.Editor editor = shared1.edit();
 
-                                    editor.clear();
-                                    editor.commit();
-                                    fs = 1;
-                                    time1 = 0L;
-                                    // g.setData(300);
-                                    g.setsstatus(0);
-                                    //locationManager.removeUpdates(Share_main.this);
-                                    //txt.setText("done");
-                                    flag = 0;
+            editor.clear();
+            editor.commit();
+            fs = 1;
+            time1 = 0L;
+            // g.setData(300);
+            g.setsstatus(0);
+            //locationManager.removeUpdates(Share_main.this);
+            //txt.setText("done");
+            flag = 0;
 
-                                    //    Toast.makeText(getApplicationContext(),""+id+"   "+time1+" "+flag, Toast.LENGTH_LONG).show();
-                                    boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
-                                }
-                            }.start();
+            //    Toast.makeText(getApplicationContext(),""+id+"   "+time1+" "+flag, Toast.LENGTH_LONG).show();
+            boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
+        }
+    }.start();
 
 //                if (phoneNo.length()>0 && message.length()>0)
 //                    sendSMS(phoneNo, message);
@@ -983,19 +983,19 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
 //                        Toast.LENGTH_SHORT).show();
 
 
-                            // } catch (PackageManager.NameNotFoundException e) {
-                            //   Toast.makeText(Share_main.this, "WhatsApp not Installed", Toast.LENGTH_SHORT)
-                            //   .show();
-                            //   }
+    // } catch (PackageManager.NameNotFoundException e) {
+    //   Toast.makeText(Share_main.this, "WhatsApp not Installed", Toast.LENGTH_SHORT)
+    //   .show();
+    //   }
 
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Please select recipients", Toast.LENGTH_LONG).show();
-                        }
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Please enable share functionality from Setting option", Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
+} else {
+        Toast.makeText(getApplicationContext(), "Please select recipients", Toast.LENGTH_LONG).show();
+        }
+        } else {
+        Toast.makeText(getApplicationContext(), "Please enable share functionality from Setting option", Toast.LENGTH_LONG).show();
+        }
+        }
+        }
         });
      /*   share.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1116,28 +1116,28 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         //
         int callingActivity = getIntent().getIntExtra("cactivity", 0);
         if (callingActivity == 1) {
-            share.setVisibility(View.INVISIBLE);
-            fav.setVisibility(View.VISIBLE);
+        share.setVisibility(View.INVISIBLE);
+        fav.setVisibility(View.VISIBLE);
 
 
         }
         int callingActivity1 = getIntent().getIntExtra("cactivity1", 0);
         if (callingActivity1 == 2) {
-            share.setVisibility(View.VISIBLE);
-            fav.setVisibility(View.INVISIBLE);
-            SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
-            //   boolean hasDrawable = (img_main.getDrawable() != null);
-            //  if(hasDrawable) {
-            crnt = shared11.getString("Current", "");
-            destination = shared11.getString("destination", "");
-            rcp = shared11.getString("rcp", "");
-            duration = shared11.getString("duration", "");
+        share.setVisibility(View.VISIBLE);
+        fav.setVisibility(View.INVISIBLE);
+        SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+        //   boolean hasDrawable = (img_main.getDrawable() != null);
+        //  if(hasDrawable) {
+        crnt = shared11.getString("Current", "");
+        destination = shared11.getString("destination", "");
+        rcp = shared11.getString("rcp", "");
+        duration = shared11.getString("duration", "");
 
 
-            Msg = shared11.getString("Msg", "");
+        Msg = shared11.getString("Msg", "");
 
 
-            locationn = new Location("");
+        locationn = new Location("");
            /* if (!crnt.equals("")) {
                 s.setText(crnt);
                 l = getLocationFromAddress(crnt);
@@ -1160,65 +1160,65 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
             } else {
                 s.setText("Define your source");
             }*/
-            //  if( imagePreferance!=null ) {
-            if (!destination.equals("")) {
-                //  t11.setText(name);
-                //     me.setText("Me "+ "("+name+")");
-                //img_main.setImageBitmap(decodeBase64(imagePreferance));
+        //  if( imagePreferance!=null ) {
+        if (!destination.equals("")) {
+        //  t11.setText(name);
+        //     me.setText("Me "+ "("+name+")");
+        //img_main.setImageBitmap(decodeBase64(imagePreferance));
 
-                //  dp.setImageBitmap(decodeBase64(imagePreferance));
-                ddd.setText(destination);
-
-
-            }
-
-            //  }
-            else {
-                // Toast.makeText(getApplicationContext(),"destin", Toast.LENGTH_LONG).show();
-                // t11.setText("Please set your profile");
-                //      Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.images);
-                //    img_main.setImageBitmap(icon1);
-                ddd.setText("Define your destination");
-
-            }
-            if (!rcp.equals("")) {
-                r.setText(rcp);
-            } else {
-                r.setText("Select recipients");
-            }
+        //  dp.setImageBitmap(decodeBase64(imagePreferance));
+        ddd.setText(destination);
 
 
-            if (!duration.equals("")) {
-                du.setText(duration);
-            } else {
-                du.setText("Share for 15 minutes");
-            }
-            if (!Msg.equals("")) {
-                msgg.setText(Msg);
-            } else {
-                msgg.setText("I am sharing my location");
-            }
+        }
+
+        //  }
+        else {
+        // Toast.makeText(getApplicationContext(),"destin", Toast.LENGTH_LONG).show();
+        // t11.setText("Please set your profile");
+        //      Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.images);
+        //    img_main.setImageBitmap(icon1);
+        ddd.setText("Define your destination");
+
+        }
+        if (!rcp.equals("")) {
+        r.setText(rcp);
+        } else {
+        r.setText("Select recipients");
+        }
 
 
-            //   spinner2.setSelection(adapter2.getPosition(dd));
+        if (!duration.equals("")) {
+        du.setText(duration);
+        } else {
+        du.setText("Share for 15 minutes");
+        }
+        if (!Msg.equals("")) {
+        msgg.setText(Msg);
+        } else {
+        msgg.setText("I am sharing my location");
+        }
+
+
+        //   spinner2.setSelection(adapter2.getPosition(dd));
 
 
         } else if (callingActivity1 == 33) {
-            share.setVisibility(View.VISIBLE);
-            fav.setVisibility(View.INVISIBLE);
-            SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
-            //   boolean hasDrawable = (img_main.getDrawable() != null);
-            //  if(hasDrawable) {
-            crnt = shared11.getString("Current", "");
-            destination = shared11.getString("destination", "");
-            rcp = shared11.getString("rcp", "");
-            duration = shared11.getString("duration", "");
+        share.setVisibility(View.VISIBLE);
+        fav.setVisibility(View.INVISIBLE);
+        SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+        //   boolean hasDrawable = (img_main.getDrawable() != null);
+        //  if(hasDrawable) {
+        crnt = shared11.getString("Current", "");
+        destination = shared11.getString("destination", "");
+        rcp = shared11.getString("rcp", "");
+        duration = shared11.getString("duration", "");
 
 
-            Msg = shared11.getString("Msg", "");
+        Msg = shared11.getString("Msg", "");
 
 
-            locationn = new Location("");
+        locationn = new Location("");
            /* if (!crnt.equals("")) {
                 s.setText(crnt);
                 l = getLocationFromAddress(crnt);
@@ -1242,65 +1242,65 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
             } else {
                 s.setText("Define your source");
             }*/
-            //  if( imagePreferance!=null ) {
-            if (!destination.equals("")) {
-                //  t11.setText(name);
-                //     me.setText("Me "+ "("+name+")");
-                //img_main.setImageBitmap(decodeBase64(imagePreferance));
+        //  if( imagePreferance!=null ) {
+        if (!destination.equals("")) {
+        //  t11.setText(name);
+        //     me.setText("Me "+ "("+name+")");
+        //img_main.setImageBitmap(decodeBase64(imagePreferance));
 
-                //  dp.setImageBitmap(decodeBase64(imagePreferance));
-                ddd.setText(destination);
-
-
-            }
-
-            //  }
-            else {
-                // Toast.makeText(getApplicationContext(),"destin", Toast.LENGTH_LONG).show();
-                // t11.setText("Please set your profile");
-                //      Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.images);
-                //    img_main.setImageBitmap(icon1);
-                ddd.setText("Define your destination");
-
-            }
-            if (!rcp.equals("")) {
-                r.setText(rcp);
-            } else {
-                r.setText("Select recipients");
-            }
+        //  dp.setImageBitmap(decodeBase64(imagePreferance));
+        ddd.setText(destination);
 
 
-            if (!duration.equals("")) {
-                du.setText(duration);
-            } else {
-                du.setText("Share for 15 minutes");
-            }
-            if (!Msg.equals("")) {
-                msgg.setText(Msg);
-            } else {
-                msgg.setText("I am sharing my location");
-            }
+        }
+
+        //  }
+        else {
+        // Toast.makeText(getApplicationContext(),"destin", Toast.LENGTH_LONG).show();
+        // t11.setText("Please set your profile");
+        //      Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.images);
+        //    img_main.setImageBitmap(icon1);
+        ddd.setText("Define your destination");
+
+        }
+        if (!rcp.equals("")) {
+        r.setText(rcp);
+        } else {
+        r.setText("Select recipients");
+        }
 
 
-            // spinner2.setSelection(adapter2.getPosition(dd));
+        if (!duration.equals("")) {
+        du.setText(duration);
+        } else {
+        du.setText("Share for 15 minutes");
+        }
+        if (!Msg.equals("")) {
+        msgg.setText(Msg);
+        } else {
+        msgg.setText("I am sharing my location");
+        }
+
+
+        // spinner2.setSelection(adapter2.getPosition(dd));
 
 
         } else if (callingActivity1 == 3) {
-            share.setVisibility(View.VISIBLE);
-            fav.setVisibility(View.INVISIBLE);
-            SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
-            //   boolean hasDrawable = (img_main.getDrawable() != null);
-            //  if(hasDrawable) {
-            crnt = shared11.getString("Current", "");
-            destination = shared11.getString("destination", "");
-            rcp = shared11.getString("rcp", "");
-            duration = shared11.getString("duration", "");
+        share.setVisibility(View.VISIBLE);
+        fav.setVisibility(View.INVISIBLE);
+        SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+        //   boolean hasDrawable = (img_main.getDrawable() != null);
+        //  if(hasDrawable) {
+        crnt = shared11.getString("Current", "");
+        destination = shared11.getString("destination", "");
+        rcp = shared11.getString("rcp", "");
+        duration = shared11.getString("duration", "");
 
 
-            Msg = shared11.getString("Msg", "");
+        Msg = shared11.getString("Msg", "");
 
 
-            locationn = new Location("");
+        locationn = new Location("");
          /*   if (!crnt.equals("")) {
                 s.setText(crnt);
                 l = getLocationFromAddress(crnt);
@@ -1324,147 +1324,147 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                 s.setText("Define your source");
             }*/
 
-            //  if( imagePreferance!=null ) {
-            if (!destination.equals("")) {
-                //  t11.setText(name);
-                //     me.setText("Me "+ "("+name+")");
-                //img_main.setImageBitmap(decodeBase64(imagePreferance));
+        //  if( imagePreferance!=null ) {
+        if (!destination.equals("")) {
+        //  t11.setText(name);
+        //     me.setText("Me "+ "("+name+")");
+        //img_main.setImageBitmap(decodeBase64(imagePreferance));
 
-                //  dp.setImageBitmap(decodeBase64(imagePreferance));
-                ddd.setText(destination);
+        //  dp.setImageBitmap(decodeBase64(imagePreferance));
+        ddd.setText(destination);
 
-
-            }
-
-            //  }
-            else {
-                // Toast.makeText(getApplicationContext(),"destin", Toast.LENGTH_LONG).show();
-                // t11.setText("Please set your profile");
-                //      Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.images);
-                //    img_main.setImageBitmap(icon1);
-                ddd.setText("Define your destination");
-
-            }
-            if (!rcp.equals("")) {
-                r.setText(rcp);
-            } else {
-                r.setText("Select recipients");
-            }
-
-
-            if (!duration.equals("")) {
-                du.setText(duration);
-            } else {
-                du.setText("Share for 15 minutes");
-            }
-            if (!Msg.equals("")) {
-                msgg.setText(Msg);
-            } else {
-                msgg.setText("I am sharing my location");
-            }
 
         }
-    }
-    public  boolean hasActiveInternetConnection() {
-        if (isNetworkAvailable()) {
-            try {
-                HttpURLConnection urlc = (HttpURLConnection) (new URL("http://www.google.com").openConnection());
-                urlc.setRequestProperty("User-Agent", "Test");
-                urlc.setRequestProperty("Connection", "close");
-                urlc.setConnectTimeout(1500);
-                urlc.connect();
-                return (urlc.getResponseCode() == 200);
-            } catch (IOException e) {
-                Log.e(LOG_TAG, "Error checking internet connection", e);
-            }
+
+        //  }
+        else {
+        // Toast.makeText(getApplicationContext(),"destin", Toast.LENGTH_LONG).show();
+        // t11.setText("Please set your profile");
+        //      Bitmap icon1 = BitmapFactory.decodeResource(getResources(), R.drawable.images);
+        //    img_main.setImageBitmap(icon1);
+        ddd.setText("Define your destination");
+
+        }
+        if (!rcp.equals("")) {
+        r.setText(rcp);
         } else {
-            Log.d(LOG_TAG, "No network available!");
+        r.setText("Select recipients");
+        }
+
+
+        if (!duration.equals("")) {
+        du.setText(duration);
+        } else {
+        du.setText("Share for 15 minutes");
+        }
+        if (!Msg.equals("")) {
+        msgg.setText(Msg);
+        } else {
+        msgg.setText("I am sharing my location");
+        }
+
+        }
+        }
+public  boolean hasActiveInternetConnection() {
+        if (isNetworkAvailable()) {
+        try {
+        HttpURLConnection urlc = (HttpURLConnection) (new URL("http://www.google.com").openConnection());
+        urlc.setRequestProperty("User-Agent", "Test");
+        urlc.setRequestProperty("Connection", "close");
+        urlc.setConnectTimeout(1500);
+        urlc.connect();
+        return (urlc.getResponseCode() == 200);
+        } catch (IOException e) {
+        Log.e(LOG_TAG, "Error checking internet connection", e);
+        }
+        } else {
+        Log.d(LOG_TAG, "No network available!");
         }
         return false;
-    }
+        }
 
-    @Override
-    protected void onPause() {
+@Override
+protected void onPause() {
         super.onPause();
         locationManager.removeUpdates(this);
-    }
-    private boolean isNetworkAvailable() {
+        }
+private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null;
-    }
+        }
 
-    private void sendSMS(String phoneNumber, String message)
-    {
+private void sendSMS(String phoneNumber, String message)
+        {
         String SENT = "SMS_SENT";
         String DELIVERED = "SMS_DELIVERED";
 
         PendingIntent sentPI = PendingIntent.getBroadcast(this, 0,
-                new Intent(SENT), 0);
+        new Intent(SENT), 0);
 
         PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0,
-                new Intent(DELIVERED), 0);
+        new Intent(DELIVERED), 0);
 
         //---when the SMS has been sent---
         registerReceiver(new BroadcastReceiver(){
-            @Override
-            public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode())
-                {
-                    case Activity.RESULT_OK:
-                        Toast.makeText(getBaseContext(), "SMS sent",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
-                        Toast.makeText(getBaseContext(), "Generic failure",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case SmsManager.RESULT_ERROR_NO_SERVICE:
-                        Toast.makeText(getBaseContext(), "No service",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case SmsManager.RESULT_ERROR_NULL_PDU:
-                        Toast.makeText(getBaseContext(), "Null PDU",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case SmsManager.RESULT_ERROR_RADIO_OFF:
-                        Toast.makeText(getBaseContext(), "Radio off",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            }
+@Override
+public void onReceive(Context arg0, Intent arg1) {
+        switch (getResultCode())
+        {
+        case Activity.RESULT_OK:
+        Toast.makeText(getBaseContext(), "SMS sent",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
+        Toast.makeText(getBaseContext(), "Generic failure",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case SmsManager.RESULT_ERROR_NO_SERVICE:
+        Toast.makeText(getBaseContext(), "No service",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case SmsManager.RESULT_ERROR_NULL_PDU:
+        Toast.makeText(getBaseContext(), "Null PDU",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case SmsManager.RESULT_ERROR_RADIO_OFF:
+        Toast.makeText(getBaseContext(), "Radio off",
+        Toast.LENGTH_SHORT).show();
+        break;
+        }
+        }
         },new IntentFilter(SENT));
 
         //---when the SMS has been delivered---
         registerReceiver(new BroadcastReceiver(){
-            @Override
-            public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode())
-                {
-                    case Activity.RESULT_OK:
-                        Toast.makeText(getBaseContext(), "SMS delivered",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case Activity.RESULT_CANCELED:
-                        Toast.makeText(getBaseContext(), "SMS not delivered",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            }
+@Override
+public void onReceive(Context arg0, Intent arg1) {
+        switch (getResultCode())
+        {
+        case Activity.RESULT_OK:
+        Toast.makeText(getBaseContext(), "SMS delivered",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case Activity.RESULT_CANCELED:
+        Toast.makeText(getBaseContext(), "SMS not delivered",
+        Toast.LENGTH_SHORT).show();
+        break;
+        }
+        }
         }, new IntentFilter(DELIVERED));
 
         SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage(phoneNumber, null, message, sentPI, deliveredPI);
-    }
-    public void show()
-    {
+        }
+public void show()
+        {
         SpannableStringBuilder ssBuilser = new SpannableStringBuilder("Set Broadcast duration");
         StyleSpan span = new StyleSpan(Typeface.BOLD);
         ScaleXSpan span1 = new ScaleXSpan(1);
-      //  ssBuilser.setSpan(span, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-      //  ssBuilser.setSpan(span1, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-        final Dialog d = new Dialog(Share_main.this);
+//  ssBuilser.setSpan(span, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+//  ssBuilser.setSpan(span1, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+final Dialog d = new Dialog(Share_main.this);
         d.setTitle(ssBuilser);
 
         d.setContentView(R.layout.dialog);
@@ -1474,8 +1474,8 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         editText = (TextView) d.findViewById(R.id.numberEditText);
         editText.setText("0");
         Button b1 = (Button) d.findViewById(R.id.button1);
-       // Button b2 = (Button) d.findViewById(R.id.button2);
-        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+// Button b2 = (Button) d.findViewById(R.id.button2);
+final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
         np.setMaxValue(59); // max value 100
         np.setMinValue(0);
         // min value 0
@@ -1490,20 +1490,20 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         np.setOnValueChangedListener(this);
         b1.setOnClickListener(new View.OnClickListener()
         {
-            @Override
-            public void onClick(View v) {
-                String rr=editText.getText().toString();
-                String c=rr + "Hr  : " + String.valueOf(np.getValue()) + "Minutes";
-                SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = shared1.edit();
-                editor.putString("hrr",rr);
-                editor.putString("min",String.valueOf(np.getValue()));
-                editor.putString("duration",c);
-                editor.apply();
-                du.setText(c); //set the value to textview
+@Override
+public void onClick(View v) {
+        String rr=editText.getText().toString();
+        String c=rr + "Hr  : " + String.valueOf(np.getValue()) + "Minutes";
+        SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = shared1.edit();
+        editor.putString("hrr",rr);
+        editor.putString("min",String.valueOf(np.getValue()));
+        editor.putString("duration",c);
+        editor.apply();
+        du.setText(c); //set the value to textview
 
-                d.dismiss();
-            }
+        d.dismiss();
+        }
         });
       /*  b2.setOnClickListener(new View.OnClickListener()
         {
@@ -1514,227 +1514,227 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         });*/
         upButton.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View v) {
-                // downButton.setBackgroundResource(R.drawable.timepicker_down_normal);
-                //   upButton.setBackgroundResource(R.drawable.timepicker_up_pressed);
-                if (values >= downrange && values <= uprange)
-                    values++;
-                if (values > uprange)
-                    values = downrange;
-                editText.setText("" + values);
-            }
+public void onClick(View v) {
+        // downButton.setBackgroundResource(R.drawable.timepicker_down_normal);
+        //   upButton.setBackgroundResource(R.drawable.timepicker_up_pressed);
+        if (values >= downrange && values <= uprange)
+        values++;
+        if (values > uprange)
+        values = downrange;
+        editText.setText("" + values);
+        }
         });
 
         downButton.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View v) {
-                //     downButton .setBackgroundResource(R.drawable.timepicker_down_pressed);
-                //    upButton.setBackgroundResource(R.drawable.timepicker_up_normal);
-                if (values >= downrange && values <= uprange)
-                    values--;
+public void onClick(View v) {
+        //     downButton .setBackgroundResource(R.drawable.timepicker_down_pressed);
+        //    upButton.setBackgroundResource(R.drawable.timepicker_up_normal);
+        if (values >= downrange && values <= uprange)
+        values--;
 
-                if (values < downrange)
-                    values = uprange;
+        if (values < downrange)
+        values = uprange;
 
-                editText.setText(values + "");
-            }
+        editText.setText(values + "");
+        }
         });
         d.show();
 
 
-    }
-    private void setDividerColor(NumberPicker picker, int color) {
+        }
+private void setDividerColor(NumberPicker picker, int color) {
 
         java.lang.reflect.Field[] pickerFields = NumberPicker.class.getDeclaredFields();
         for (java.lang.reflect.Field pf : pickerFields) {
-            if (pf.getName().equals("mSelectionDivider")) {
-                pf.setAccessible(true);
-                try {
-                    ColorDrawable colorDrawable = new ColorDrawable(color);
-                    pf.set(picker, colorDrawable);
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (Resources.NotFoundException e) {
-                    e.printStackTrace();
-                }
-                catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-                break;
-            }
+        if (pf.getName().equals("mSelectionDivider")) {
+        pf.setAccessible(true);
+        try {
+        ColorDrawable colorDrawable = new ColorDrawable(color);
+        pf.set(picker, colorDrawable);
+        } catch (IllegalArgumentException e) {
+        e.printStackTrace();
+        } catch (Resources.NotFoundException e) {
+        e.printStackTrace();
         }
-    }
-    @SuppressLint("LongLogTag")
-    public static boolean setNumberPickerTextColor(NumberPicker numberPicker, int color)
-    {
-        final int count = numberPicker.getChildCount();
+        catch (IllegalAccessException e) {
+        e.printStackTrace();
+        }
+        break;
+        }
+        }
+        }
+@SuppressLint("LongLogTag")
+public static boolean setNumberPickerTextColor(NumberPicker numberPicker, int color)
+        {
+final int count = numberPicker.getChildCount();
         for(int i = 0; i < count; i++){
-            View child = numberPicker.getChildAt(i);
-            if(child instanceof EditText){
-                try{
-                    Field selectorWheelPaintField = numberPicker.getClass()
-                            .getDeclaredField("mSelectorWheelPaint");
-                    selectorWheelPaintField.setAccessible(true);
-                    ((Paint)selectorWheelPaintField.get(numberPicker)).setColor(color);
-                    ((EditText)child).setTextColor(color);
-                    ((EditText)child).setTextSize(15);
-                    numberPicker.invalidate();
-                    return true;
-                }
-                catch(NoSuchFieldException e){
-                    Log.w("setNumberPickerTextColor", e);
-                }
-                catch(IllegalAccessException e){
-                    Log.w("setNumberPickerTextColor", e);
-                }
-                catch(IllegalArgumentException e){
-                    Log.w("setNumberPickerTextColor", e);
-                }
-            }
+        View child = numberPicker.getChildAt(i);
+        if(child instanceof EditText){
+        try{
+        Field selectorWheelPaintField = numberPicker.getClass()
+        .getDeclaredField("mSelectorWheelPaint");
+        selectorWheelPaintField.setAccessible(true);
+        ((Paint)selectorWheelPaintField.get(numberPicker)).setColor(color);
+        ((EditText)child).setTextColor(color);
+        ((EditText)child).setTextSize(15);
+        numberPicker.invalidate();
+        return true;
+        }
+        catch(NoSuchFieldException e){
+        Log.w("setNumberPickerTextColor", e);
+        }
+        catch(IllegalAccessException e){
+        Log.w("setNumberPickerTextColor", e);
+        }
+        catch(IllegalArgumentException e){
+        Log.w("setNumberPickerTextColor", e);
+        }
+        }
         }
         return false;
-    }
-    public void loadFragment(Fragment fragment, boolean addToBackStack) {
+        }
+public void loadFragment(Fragment fragment, boolean addToBackStack) {
 
         if(addToBackStack){
-            getSupportFragmentManager().beginTransaction().addToBackStack(null)
-                    .replace(CONTAINER, fragment).commit();
+        getSupportFragmentManager().beginTransaction().addToBackStack(null)
+        .replace(CONTAINER, fragment).commit();
         }else{
-            getSupportFragmentManager().beginTransaction()
-                    .replace(CONTAINER, fragment).commit();
+        getSupportFragmentManager().beginTransaction()
+        .replace(CONTAINER, fragment).commit();
         }
 
-    }
+        }
 
-    @Override
-    public void onValueChange(NumberPicker numberPicker, int i, int i2) {
+@Override
+public void onValueChange(NumberPicker numberPicker, int i, int i2) {
 
-    }
+        }
 
-    @Override
-    public void onLocationChanged(Location location1) {
+@Override
+public void onLocationChanged(Location location1) {
         //  TextView locationTv = (TextView) findViewById(R.id.latlongLocation);
 
         if(location1!=null) {
-            if(!isNetworkAvailable())
-            {
-                locationManager.removeUpdates(this);
-                location = locationManager
-                        .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        if(!isNetworkAvailable())
+        {
+        locationManager.removeUpdates(this);
+        location = locationManager
+        .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
 
-            }
-            double latitude = location1.getLatitude();
-            double longitude = location1.getLongitude();
-            //  spd.setText(""+location1.getSpeed()*3600/1000 +"km/h");
-            //   Toast.makeText(getApplicationContext(),""+location.getSpeed(), Toast.LENGTH_LONG).show();
-            LatLng latLng = new LatLng(latitude, longitude);
-            map.clear();
-            //  googleMap.addMarker(new MarkerOptions().position(latLng));
-            View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
-            ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
-            ivv.setImageBitmap(decodeBase64(imagePreferance));
-            //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
-            //  numTxt.setText("27");
-            customMarker = map.addMarker(new MarkerOptions()
-                    .position(
-                            new LatLng(location.getLatitude(), location
-                                    .getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
-            //marker.setIcon(icon1);
+        }
+        double latitude = location1.getLatitude();
+        double longitude = location1.getLongitude();
+        //  spd.setText(""+location1.getSpeed()*3600/1000 +"km/h");
+        //   Toast.makeText(getApplicationContext(),""+location.getSpeed(), Toast.LENGTH_LONG).show();
+        LatLng latLng = new LatLng(latitude, longitude);
+        map.clear();
+        //  googleMap.addMarker(new MarkerOptions().position(latLng));
+        View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
+        ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
+        ivv.setImageBitmap(decodeBase64(imagePreferance));
+        //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
+        //  numTxt.setText("27");
+        customMarker = map.addMarker(new MarkerOptions()
+        .position(
+        new LatLng(location.getLatitude(), location
+        .getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
+        //marker.setIcon(icon1);
 
 
-            customMarker.showInfoWindow();
-            map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                public boolean onMarkerClick(Marker marker) {
-                    // Check if there is an open info window
-                    if (lastOpenned != null) {
-                        // Close the info window
-                        lastOpenned.hideInfoWindow();
+        customMarker.showInfoWindow();
+        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+public boolean onMarkerClick(Marker marker) {
+        // Check if there is an open info window
+        if (lastOpenned != null) {
+        // Close the info window
+        lastOpenned.hideInfoWindow();
 
-                        // Is the marker the same marker that was already open
-                        if (lastOpenned.equals(marker)) {
-                            // Nullify the lastOpenned object
-                            lastOpenned = null;
-                            // Return so that the info window isn't openned again
-                            return true;
-                        }
-                    }
+        // Is the marker the same marker that was already open
+        if (lastOpenned.equals(marker)) {
+        // Nullify the lastOpenned object
+        lastOpenned = null;
+        // Return so that the info window isn't openned again
+        return true;
+        }
+        }
 
-                    // Open the info window for the marker
-                    customMarker.showInfoWindow();
-                    // Re-assign the last openned such that we can close it later
-                    lastOpenned =customMarker;
+        // Open the info window for the marker
+        customMarker.showInfoWindow();
+        // Re-assign the last openned such that we can close it later
+        lastOpenned =customMarker;
 
-                    // Event was handled by our code do not launch default behaviour.
-                    return true;
-                }
-            });
-            geocoder = new Geocoder(this, Locale.getDefault());
-            try {
-                addresses = geocoder.getFromLocation(location1.getLatitude(), location1.getLongitude(), 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+        // Event was handled by our code do not launch default behaviour.
+        return true;
+        }
+        });
+        geocoder = new Geocoder(this, Locale.getDefault());
+        try {
+        addresses = geocoder.getFromLocation(location1.getLatitude(), location1.getLongitude(), 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
 
-                address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-                city = addresses.get(0).getLocality();
-                state = addresses.get(0).getAdminArea();
-                country = addresses.get(0).getCountryName();
-                String postalCode = addresses.get(0).getPostalCode();
-                knownName = addresses.get(0).getFeatureName();
-            } catch (Exception e) {
+        address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+        city = addresses.get(0).getLocality();
+        state = addresses.get(0).getAdminArea();
+        country = addresses.get(0).getCountryName();
+        String postalCode = addresses.get(0).getPostalCode();
+        knownName = addresses.get(0).getFeatureName();
+        } catch (Exception e) {
 
-            }
-            lp = address + "," + city + "," + country;
+        }
+        lp = address + "," + city + "," + country;
 
 
-            // Toast.makeText(getApplicationContext(),name, Toast.LENGTH_LONG).show();
+        // Toast.makeText(getApplicationContext(),name, Toast.LENGTH_LONG).show();
 
-            if(!lp.equals("null,null,null")) {
-                s.setText(lp);
-            }
-            else
-            {
-                s.setText("Not able to find current location");
-            }
-            crnt=s.getText().toString();
-            clat=Double.toString (latitude);
-            clong=Double.toString (longitude);
-            int p1 = sqliteHelper1.dbSyncCount();
-            int x = p1;
-            //Toast.makeText(getApplicationContext(),""+x, Toast.LENGTH_LONG).show();
-            if(g.getData()==100)
-            {
-                while (p1 > 0) {
-                    final int finalP = x - p1 + 1;
-                    p = Integer.toString(finalP);
-                    Cursor cursor = sqliteHelper1.getUser(p);
-                    if (cursor.getCount() != 0) {
-                        cursor.moveToFirst();
-                        //idd = cursor.getString(cursor.getColumnIndex("id"));
-                        fs = cursor.getInt(cursor.getColumnIndex("fs"));
+        if(!lp.equals("null,null,null")) {
+        s.setText(lp);
+        }
+        else
+        {
+        s.setText("Not able to find current location");
+        }
+        crnt=s.getText().toString();
+        clat=Double.toString (latitude);
+        clong=Double.toString (longitude);
+        int p1 = sqliteHelper1.dbSyncCount();
+        int x = p1;
+        //Toast.makeText(getApplicationContext(),""+x, Toast.LENGTH_LONG).show();
+        if(g.getData()==100)
+        {
+        while (p1 > 0) {
+final int finalP = x - p1 + 1;
+        p = Integer.toString(finalP);
+        Cursor cursor = sqliteHelper1.getUser(p);
+        if (cursor.getCount() != 0) {
+        cursor.moveToFirst();
+        //idd = cursor.getString(cursor.getColumnIndex("id"));
+        fs = cursor.getInt(cursor.getColumnIndex("fs"));
 
-                    }
-                    if (fs == 0) {
-                        new Datafetch().execute();
-                    } else {
-                      //  Toast.makeText(getApplicationContext(),"There is no sharing active", Toast.LENGTH_LONG).show();
-                    }
-                p1--;
-                }
-                // Toast.makeText(getApplicationContext(),"100 is here", Toast.LENGTH_LONG).show();
-            }
-            else if(g.getData()==300)
-            {
-                //Toast.makeText(getApplicationContext(),"Service stopped", Toast.LENGTH_LONG).show();
-            }
-         //   Toast.makeText(Share_main.this,""+lp, Toast.LENGTH_LONG).show();
+        }
+        if (fs == 0) {
+        new Datafetch().execute();
+        } else {
+        //  Toast.makeText(getApplicationContext(),"There is no sharing active", Toast.LENGTH_LONG).show();
+        }
+        p1--;
+        }
+        // Toast.makeText(getApplicationContext(),"100 is here", Toast.LENGTH_LONG).show();
+        }
+        else if(g.getData()==300)
+        {
+        //Toast.makeText(getApplicationContext(),"Service stopped", Toast.LENGTH_LONG).show();
+        }
+        //   Toast.makeText(Share_main.this,""+lp, Toast.LENGTH_LONG).show();
 
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(
-                    new LatLng(location1.getLatitude(), location1.getLongitude()), 15));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+        new LatLng(location1.getLatitude(), location1.getLongitude()), 15));
 
 
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Location is not available now.Please wait for some time.", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Location is not available now.Please wait for some time.", Toast.LENGTH_LONG).show();
         }
         // googleMap.animateCamera(CameraUpdateFactory.zoomTo(6));
         //googleMap.addMarker(new MarkerOptions().position(latLng)
@@ -1747,7 +1747,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         {
             locationManager.removeUpdates(this);
         }*/
-    }
+        }
 
 /*    @Override
     public void onLocationChanged(Location location) {
@@ -1764,41 +1764,41 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         }
     }*/
 
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
+@Override
+public void onStatusChanged(String provider, int status, Bundle extras) {
 
-    }
+        }
 
-    @Override
-    public void onProviderEnabled(String provider) {
+@Override
+public void onProviderEnabled(String provider) {
 
-    }
+        }
 
-    @Override
-    public void onProviderDisabled(String provider) {
+@Override
+public void onProviderDisabled(String provider) {
 
-    }
+        }
 
-    @Override
-    public void onMapReady(final GoogleMap googleMap) {
+@Override
+public void onMapReady(final GoogleMap googleMap) {
         map = googleMap;
         googleMap.setMyLocationEnabled(true);
         // googleMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
         if(g.getFlag()==1)
         {
-            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }
         else if(g.getFlag()==2)
         {
-            googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         }
         else if(g.getFlag()==3)
         {
-            googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
         }
         else if(g.getFlag()==4)
         {
-            googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
         //googleMap.getUiSettings().setZoomControlsEnabled(true);
         googleMap.getUiSettings().setRotateGesturesEnabled(true);
@@ -1823,95 +1823,95 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         //   }
         //   else {
         if(isNetworkAvailable()) {
-            Boolean isNetworkEnabled = locationManager
-                    .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-            Boolean isGPSEnabled = locationManager
-                    .isProviderEnabled(LocationManager.GPS_PROVIDER);
-            if (isNetworkEnabled) {
+        Boolean isNetworkEnabled = locationManager
+        .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        Boolean isGPSEnabled = locationManager
+        .isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if (isNetworkEnabled) {
 
-                locationManager.requestLocationUpdates(
-                        LocationManager.NETWORK_PROVIDER,
-                        MIN_TIME_BW_UPDATES,
-                        MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                location = locationManager
-                        .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                onLocationChanged(location);
-            } else if (isGPSEnabled) {
-                if (location == null) {
-                    locationManager.requestLocationUpdates(
-                            LocationManager.GPS_PROVIDER,
-                            MIN_TIME_BW_UPDATES,
-                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                    location = locationManager
-                            .getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                    onLocationChanged(location);
+        locationManager.requestLocationUpdates(
+        LocationManager.NETWORK_PROVIDER,
+        MIN_TIME_BW_UPDATES,
+        MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+        location = locationManager
+        .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        onLocationChanged(location);
+        } else if (isGPSEnabled) {
+        if (location == null) {
+        locationManager.requestLocationUpdates(
+        LocationManager.GPS_PROVIDER,
+        MIN_TIME_BW_UPDATES,
+        MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+        location = locationManager
+        .getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        onLocationChanged(location);
 
-                }
-            } else {
-                // Toast.makeText(getApplicationContext(), "Neither network provider nor GPS provider is enabled", Toast.LENGTH_LONG).show();
-            }
+        }
+        } else {
+        // Toast.makeText(getApplicationContext(), "Neither network provider nor GPS provider is enabled", Toast.LENGTH_LONG).show();
+        }
         }
         else
         {
-            locationManager.removeUpdates(this);
-           // Toast.makeText(getApplicationContext(),"No Internet", Toast.LENGTH_LONG).show();
-            //bestProvider = locationManager.getBestProvider(criteria, true);
+        locationManager.removeUpdates(this);
+        // Toast.makeText(getApplicationContext(),"No Internet", Toast.LENGTH_LONG).show();
+        //bestProvider = locationManager.getBestProvider(criteria, true);
 
-            location = locationManager
-                    .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-
-
-            map.clear();
-            ll = location;
-            if(location!=null) {
-            s.setText("Not able to find exact location because of no internet connectivity");
-                View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
-                ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
-                ivv.setImageBitmap(decodeBase64(imagePreferance));
-
-                //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
-                //  numTxt.setText("27");
-                customMarker = map.addMarker(new MarkerOptions()
-                        .position(
-                                new LatLng(location.getLatitude(), location
-                                        .getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
-                //marker.setIcon(icon1);
+        location = locationManager
+        .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
 
-                customMarker.showInfoWindow();
-                map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                    public boolean onMarkerClick(Marker marker) {
-                        // Check if there is an open info window
-                        if (lastOpenned != null) {
-                            // Close the info window
-                            lastOpenned.hideInfoWindow();
+        map.clear();
+        ll = location;
+        if(location!=null) {
+        s.setText("Not able to find exact location because of no internet connectivity");
+        View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
+        ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
+        ivv.setImageBitmap(decodeBase64(imagePreferance));
 
-                            // Is the marker the same marker that was already open
-                            if (lastOpenned.equals(marker)) {
-                                // Nullify the lastOpenned object
-                                lastOpenned = null;
-                                // Return so that the info window isn't openned again
-                                return true;
-                            }
-                        }
+        //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
+        //  numTxt.setText("27");
+        customMarker = map.addMarker(new MarkerOptions()
+        .position(
+        new LatLng(location.getLatitude(), location
+        .getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
+        //marker.setIcon(icon1);
 
-                        // Open the info window for the marker
-                        customMarker.showInfoWindow();
-                        // Re-assign the last openned such that we can close it later
-                        lastOpenned =customMarker;
 
-                        // Event was handled by our code do not launch default behaviour.
-                        return true;
-                    }
-                });
+        customMarker.showInfoWindow();
+        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+public boolean onMarkerClick(Marker marker) {
+        // Check if there is an open info window
+        if (lastOpenned != null) {
+        // Close the info window
+        lastOpenned.hideInfoWindow();
 
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(
-                        new LatLng(location.getLatitude(), location.getLongitude()), 15));
-            }
-            else
-            {
-                Toast.makeText(Share_main.this,"Your phone network is not available! Sorry",Toast.LENGTH_SHORT).show();
-            }
+        // Is the marker the same marker that was already open
+        if (lastOpenned.equals(marker)) {
+        // Nullify the lastOpenned object
+        lastOpenned = null;
+        // Return so that the info window isn't openned again
+        return true;
+        }
+        }
+
+        // Open the info window for the marker
+        customMarker.showInfoWindow();
+        // Re-assign the last openned such that we can close it later
+        lastOpenned =customMarker;
+
+        // Event was handled by our code do not launch default behaviour.
+        return true;
+        }
+        });
+
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+        new LatLng(location.getLatitude(), location.getLongitude()), 15));
+        }
+        else
+        {
+        Toast.makeText(Share_main.this,"Your phone network is not available! Sorry",Toast.LENGTH_SHORT).show();
+        }
         }
 
 
@@ -1964,8 +1964,8 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
 
             }
         });*/
-    }
-    public static Bitmap createDrawableFromView(Context context, View view) {
+        }
+public static Bitmap createDrawableFromView(Context context, View view) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         view.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
@@ -1978,21 +1978,21 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
         view.draw(canvas);
 
         return bitmap;
-    }
-    public void setUpMapIfNeeded(){
+        }
+public void setUpMapIfNeeded(){
         supportMapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.googleMap);
+        (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.googleMap);
         supportMapFragment.getMapAsync(this);
 
-    }
-    class Initiate1 extends AsyncTask<String, String, String> {
+        }
+class Initiate1 extends AsyncTask<String, String, String> {
 
-        boolean failure = false;
-        LatLng cl = getLocationFromAddress(crnt);
-        //LatLng dest = getLocationFromAddress(desti);
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
+    boolean failure = false;
+    LatLng cl = getLocationFromAddress(crnt);
+    //LatLng dest = getLocationFromAddress(desti);
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
            /*
             pDialog.setMessage("Attempting login...");
             pDialog.setIndeterminate(false);
