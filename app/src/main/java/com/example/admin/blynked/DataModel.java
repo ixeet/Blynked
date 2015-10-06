@@ -35,6 +35,8 @@ public class DataModel {
     public int getOtherData() {
         return imgId;
     }
-
+ public int getOtherData1() {
+        return imgId;
+    }
 
 }
