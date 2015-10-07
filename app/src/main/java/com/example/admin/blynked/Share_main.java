@@ -693,16 +693,16 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 Intent waIntent = new Intent(Intent.ACTION_SEND);
                                 waIntent.setType("text/plain");
                                 if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "http://191.239.57.54:8080/Blynk/locate/"+uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "http://191.239.57.54:8080/Blynk/locate/"+uid;
                                 }
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                                 //Check if package exists or not. If not then code
                                 //in catch block will be called
                                 waIntent.setPackage("com.facebook.katana");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                Log.d("Selected",text);
+                                waIntent.putExtra(android.content.Intent.EXTRA_TEXT, text);
                                 startActivity(Intent.createChooser(waIntent, "Share with"));
                             } else if (rcp.equals("WhatsApp")) {
                                 Intent waIntent = new Intent(Intent.ACTION_SEND);
@@ -810,7 +810,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 //Check if package exists or not. If not then code
                                 //in catch block will be called
                                 waIntent.setPackage("com.facebook.orca");
-
+                                Log.d("Selected",text);
                                 waIntent.putExtra(Intent.EXTRA_TEXT, text);
                                 startActivity(Intent.createChooser(waIntent, "Share with"));
                             } else {
@@ -824,6 +824,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
 
                                     String sub = phoneNo.substring(1, phoneNo.length() - 1);
                                     String str = sub.replaceAll("[^+,0-9]+", " ");
+                                    Log.d("number got",str);
                     /*    Toast.makeText(getBaseContext(),
                                 str,
                                 Toast.LENGTH_LONG).show();*/
@@ -831,6 +832,8 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                     StringTokenizer st = new StringTokenizer(str, ",");
                                     while (st.hasMoreElements()) {
                                         String tempMobileNumber = (String) st.nextElement();
+                                        tempMobileNumber = tempMobileNumber.substring(tempMobileNumber.length() - 10);
+                                        Log.d("Exact numbers",tempMobileNumber);
                                         if (tempMobileNumber.length() > 0 && message.trim().length() > 0) {
                                             sendSMS(tempMobileNumber, message);
                                         } else {
@@ -1437,7 +1440,7 @@ public void onReceive(Context arg0, Intent arg1) {
         },new IntentFilter(SENT));
 
         //---when the SMS has been delivered---
-        registerReceiver(new BroadcastReceiver(){
+       /* registerReceiver(new BroadcastReceiver(){
 @Override
 public void onReceive(Context arg0, Intent arg1) {
         switch (getResultCode())
@@ -1453,7 +1456,7 @@ public void onReceive(Context arg0, Intent arg1) {
         }
         }
         }, new IntentFilter(DELIVERED));
-
+*/
         SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage(phoneNumber, null, message, sentPI, deliveredPI);
         }
@@ -1619,7 +1622,7 @@ public void onLocationChanged(Location location1) {
         if(!isNetworkAvailable())
         {
         locationManager.removeUpdates(this);
-        location = locationManager
+        location1 = locationManager
         .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
 
@@ -1638,7 +1641,7 @@ public void onLocationChanged(Location location1) {
         //  numTxt.setText("27");
         customMarker = map.addMarker(new MarkerOptions()
         .position(
-        new LatLng(location.getLatitude(), location
+        new LatLng(location1.getLatitude(), location1
         .getLongitude())).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
         //marker.setIcon(icon1);
 

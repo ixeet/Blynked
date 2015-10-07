@@ -1458,6 +1458,7 @@ lim=shared1.getString("lim","");
                 StringTokenizer st = new StringTokenizer(str, ",");
                 while (st.hasMoreElements()) {
                     String tempMobileNumber = (String) st.nextElement();
+                    tempMobileNumber = tempMobileNumber.substring(tempMobileNumber.length() - 10);
                     if (tempMobileNumber.length() > 0 && message.trim().length() > 0) {
 
 
@@ -1554,7 +1555,7 @@ lim=shared1.getString("lim","");
         },new IntentFilter(SENT));
 
         //---when the SMS has been delivered---
-        registerReceiver(new BroadcastReceiver(){
+       /* registerReceiver(new BroadcastReceiver(){
             @Override
             public void onReceive(Context arg0, Intent arg1) {
                 switch (getResultCode())
@@ -1570,7 +1571,7 @@ lim=shared1.getString("lim","");
                 }
             }
         }, new IntentFilter(DELIVERED));
-
+*/
         SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage(phoneNumber, null, message, sentPI, deliveredPI);
 

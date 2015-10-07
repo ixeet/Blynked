@@ -593,6 +593,7 @@ public class Favourite_main extends ActionBarActivity {
                     @Override
                     public void run() {
                         Intent i = new Intent(Favourite_main.this, Share_main.class);
+
                         startActivity(i);
 
                         finish();

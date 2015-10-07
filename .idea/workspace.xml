@@ -17,9 +17,6 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.admin.blynked" />
-  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/VerificationActivity.java" line="79" />
   </component>
@@ -49,7 +46,7 @@
       <file leaf-file-name="VerificationActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/VerificationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-42.107143" vertical-offset="555" max-vertical-offset="4403">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="5151">
               <caret line="137" column="52" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
               <folding />
             </state>
@@ -59,16 +56,77 @@
       <file leaf-file-name="Share_main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.7224574" vertical-offset="3198" max-vertical-offset="42415">
-              <caret line="349" column="14" selection-start-line="349" selection-start-column="14" selection-end-line="349" selection-end-column="14" />
+            <state vertical-scroll-proportion="3.0689654" vertical-offset="11017" max-vertical-offset="42517">
+              <caret line="705" column="92" selection-start-line="705" selection-start-column="92" selection-end-line="705" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#12400#13019#0" expanded="true" />
                 <element signature="e#12992#12993#0" expanded="true" />
-                <element signature="e#83094#83109#0" expanded="true" />
-                <element signature="e#86359#86374#0" expanded="true" />
-                <element signature="e#91821#91836#0" expanded="true" />
-                <element signature="e#101425#101433#0" expanded="true" />
+                <element signature="e#83442#83457#0" expanded="true" />
+                <element signature="e#86707#86722#0" expanded="true" />
+                <element signature="e#92169#92184#0" expanded="true" />
+                <element signature="e#101773#101781#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Selectall.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="6885">
+              <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2822" max-vertical-offset="35615">
+              <caret line="378" column="2" selection-start-line="378" selection-start-column="2" selection-end-line="378" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Adapterr.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Adapterr.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2179" max-vertical-offset="2992">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SqliteHelper1.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/SqliteHelper1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="914" max-vertical-offset="3315">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Favourite_main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Favourite_main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8476" max-vertical-offset="9962">
+              <caret line="595" column="0" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistoryActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/HistoryActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.392857" vertical-offset="7091" max-vertical-offset="14773">
+              <caret line="512" column="32" selection-start-line="512" selection-start-column="32" selection-end-line="512" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,49 +134,12 @@
       <file leaf-file-name="Share_main1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="45458">
-              <caret line="201" column="55" selection-start-line="201" selection-start-column="53" selection-end-line="201" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sharesqlite.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Sharesqlite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5" vertical-offset="1456" max-vertical-offset="2295">
-              <caret line="124" column="32" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Selectd.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6785715" vertical-offset="1013" max-vertical-offset="21692">
-              <caret line="253" column="29" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Selectd1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectd1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="21573">
-              <caret line="255" column="55" selection-start-line="255" selection-start-column="53" selection-end-line="255" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Selectmsg.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectmsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.714286" vertical-offset="7660" max-vertical-offset="8160">
-              <caret line="568" column="48" selection-start-line="568" selection-start-column="48" selection-end-line="568" selection-end-column="48" />
-              <folding />
+            <state vertical-scroll-proportion="8.5" vertical-offset="22134" max-vertical-offset="45577">
+              <caret line="1460" column="98" selection-start-line="1460" selection-start-column="98" selection-end-line="1460" selection-end-column="98" />
+              <folding>
+                <element signature="e#66464#67775#0" expanded="true" />
+                <element signature="e#67764#67765#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,28 +147,8 @@
       <file leaf-file-name="Splash.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Splash.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.107143" vertical-offset="203" max-vertical-offset="1173">
+            <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="1700">
               <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Selectmsg1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectmsg1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.642857" vertical-offset="91" max-vertical-offset="8143">
-              <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Setting_main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Setting_main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.107143" vertical-offset="826" max-vertical-offset="16116">
-              <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -1623,7 +1624,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Utility.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Calendar_main.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Favourite_main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Request_main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectallauto.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectallq.java" />
@@ -1635,7 +1635,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectmsg1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectr.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selects.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main1.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_favourite_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_request_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_selectall.xml" />
@@ -1667,8 +1666,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectblynked.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/VerificationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/GetJsonObject.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/HistoryActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Favourite_main.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main1.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main.java" />
       </list>
     </option>
   </component>
@@ -1688,7 +1689,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1703,8 +1704,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2125,6 +2124,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2278,8 +2279,12 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0123456789ABCDEF" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4d000a7be003b100" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
+    <property name="FullScreen" value="false" />
+    <property name="DEBUGGABLE_DEVICE" value="micromax-micromax_a120-0123456789ABCDEF" />
+    <property name="DEBUGGABLE_PROCESS" value="com.example.admin.blynked" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -2489,7 +2494,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1377" height="744" extended-state="0" />
+    <frame x="-8" y="0" width="1377" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2504,14 +2509,14 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47959185" sideWeight="0.4478708" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.079931974" sideWeight="0.5932452" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.68537414" sideWeight="0.5932452" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4262295" sideWeight="0.40675476" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23462415" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2704918" sideWeight="0.5154185" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27040815" sideWeight="0.5154185" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2572,31 +2577,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="60" />
+      <option name="time" value="61" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/CustomAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0357144" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/CustomAdaptermsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8214285" vertical-offset="0" max-vertical-offset="2210">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/DataModelmsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="782">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Eventadapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0357144" vertical-offset="0" max-vertical-offset="1309">
@@ -2756,7 +2740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2764,7 +2747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.25" vertical-offset="28" max-vertical-offset="9333">
           <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2772,15 +2754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1071">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Favourite_main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6785715" vertical-offset="520" max-vertical-offset="9945">
-          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2788,7 +2761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2796,30 +2768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/HistoryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5357144" vertical-offset="12424" max-vertical-offset="14773">
-          <caret line="847" column="50" selection-start-line="847" selection-start-column="50" selection-end-line="847" selection-end-column="50" />
-          <folding>
-            <element signature="e#2362#2379#0" expanded="true" />
-            <element signature="e#5390#5410#0" expanded="true" />
-            <element signature="e#5412#5433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7857144" vertical-offset="132" max-vertical-offset="35768">
-          <caret line="209" column="23" selection-start-line="209" selection-start-column="23" selection-end-line="209" selection-end-column="23" />
-          <folding>
-            <element signature="e#21751#22372#0" expanded="true" />
-            <element signature="e#22345#22346#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2827,7 +2775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1564">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2835,7 +2782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9285715" vertical-offset="672" max-vertical-offset="11407">
           <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2843,15 +2789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0714285" vertical-offset="537" max-vertical-offset="11679">
           <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2857144" vertical-offset="435" max-vertical-offset="6885">
-          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2859,7 +2796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="7275" max-vertical-offset="7871">
           <caret line="532" column="32" selection-start-line="532" selection-start-column="32" selection-end-line="532" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2867,7 +2803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.892858" vertical-offset="1536" max-vertical-offset="9231">
           <caret line="156" column="20" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2875,7 +2810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="7837">
           <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2883,13 +2817,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8928572" vertical-offset="5897" max-vertical-offset="8721">
           <caret line="454" column="41" selection-start-line="454" selection-start-column="41" selection-end-line="454" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6785715" vertical-offset="1013" max-vertical-offset="21692">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4301" max-vertical-offset="25959">
           <caret line="253" column="29" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
           <folding />
         </state>
@@ -2905,7 +2838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectmsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.714286" vertical-offset="7660" max-vertical-offset="8160">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9656" max-vertical-offset="9996">
           <caret line="568" column="48" selection-start-line="568" selection-start-column="48" selection-end-line="568" selection-end-column="48" />
           <folding />
         </state>
@@ -2913,7 +2846,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectmsg1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.642857" vertical-offset="91" max-vertical-offset="8143">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="9962">
           <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
           <folding />
         </state>
@@ -2921,23 +2854,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Setting_main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.107143" vertical-offset="826" max-vertical-offset="16116">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="18088">
           <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="45458">
-          <caret line="201" column="55" selection-start-line="201" selection-start-column="53" selection-end-line="201" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Sharesqlite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="1456" max-vertical-offset="2295">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="2737">
           <caret line="124" column="32" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
           <folding />
         </state>
@@ -2945,7 +2870,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Splash.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.107143" vertical-offset="203" max-vertical-offset="1173">
+        <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="1700">
           <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
           <folding />
         </state>
@@ -2953,23 +2878,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/VerificationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-42.107143" vertical-offset="555" max-vertical-offset="4403">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="5151">
           <caret line="137" column="52" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.392857" vertical-offset="7091" max-vertical-offset="14773">
+          <caret line="512" column="32" selection-start-line="512" selection-start-column="32" selection-end-line="512" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Favourite_main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8476" max-vertical-offset="9962">
+          <caret line="595" column="0" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/SqliteHelper1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="917" max-vertical-offset="3315">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-22/android.jar!/android/telephony/SmsManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3319838" vertical-offset="822" max-vertical-offset="1479">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Adapterr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2179" max-vertical-offset="2992">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Selectall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="6885">
+          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2822" max-vertical-offset="35615">
+          <caret line="378" column="2" selection-start-line="378" selection-start-column="2" selection-end-line="378" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.5" vertical-offset="22134" max-vertical-offset="45577">
+          <caret line="1460" column="98" selection-start-line="1460" selection-start-column="98" selection-end-line="1460" selection-end-column="98" />
+          <folding>
+            <element signature="e#66464#67775#0" expanded="true" />
+            <element signature="e#67764#67765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/blynked/Share_main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.7224574" vertical-offset="3198" max-vertical-offset="42415">
-          <caret line="349" column="14" selection-start-line="349" selection-start-column="14" selection-end-line="349" selection-end-column="14" />
+        <state vertical-scroll-proportion="3.0689654" vertical-offset="11017" max-vertical-offset="42517">
+          <caret line="705" column="92" selection-start-line="705" selection-start-column="92" selection-end-line="705" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#12400#13019#0" expanded="true" />
             <element signature="e#12992#12993#0" expanded="true" />
-            <element signature="e#83094#83109#0" expanded="true" />
-            <element signature="e#86359#86374#0" expanded="true" />
-            <element signature="e#91821#91836#0" expanded="true" />
-            <element signature="e#101425#101433#0" expanded="true" />
+            <element signature="e#83442#83457#0" expanded="true" />
+            <element signature="e#86707#86722#0" expanded="true" />
+            <element signature="e#92169#92184#0" expanded="true" />
+            <element signature="e#101773#101781#0" expanded="true" />
           </folding>
         </state>
       </provider>
