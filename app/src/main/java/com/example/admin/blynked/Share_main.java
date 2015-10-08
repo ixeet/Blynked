@@ -355,6 +355,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                             @Override
                             public void run() {
                                 Intent ii1 = new Intent(Share_main.this, Share_main.class);
+                                g.setfavflag(2);
                                 //statusCheck();
                                 startActivity(ii1);
                                 finish();
@@ -367,7 +368,12 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                     case 1:
 
                         // new Ss().execute();
+                        SharedPreferences shared11 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
 
+                        SharedPreferences.Editor editor1 = shared11.edit();
+
+                        editor1.clear();
+                        editor1.commit();
                         progressBar1 = (ProgressBar) findViewById(R.id.pBar1);
                         progressBar1.setProgress(0);
                         progressBar1.setVisibility(View.VISIBLE);
@@ -381,6 +387,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                             @Override
                             public void run() {
                                 Intent ii1 = new Intent(Share_main.this, Share_main1.class);
+                                g.setfavflag(2);
                                 //statusCheck();
                                 startActivity(ii1);
                                 finish();
@@ -391,31 +398,64 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                         // drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case 2:
+                        SharedPreferences shared111 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+
+                        SharedPreferences.Editor editor11 = shared111.edit();
+
+                        editor11.clear();
+                        editor11.commit();
                         Intent i2 = new Intent(Share_main.this, Request_main.class);
+                        g.setfavflag(2);
                         startActivity(i2);
                         finish();
                         break;
 
                     case 3:
 
+                        SharedPreferences shared1111 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
 
+                        SharedPreferences.Editor editor111 = shared1111.edit();
+
+                        editor111.clear();
+                        editor111.commit();
                         Intent i22 = new Intent(Share_main.this, Favourite_main.class);
+                        g.setfavflag(2);
                         startActivity(i22);
                         finish();
                         break;
 
 
                     case 4:
+                        SharedPreferences shared2 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+
+                        SharedPreferences.Editor editor2 = shared2.edit();
+
+                        editor2.clear();
+                        editor2.commit();
                         Intent ihe = new Intent(Share_main.this, Calendar_main.class);
+                        g.setfavflag(2);
                         startActivity(ihe);
                         finish();
                         break;
                     case 5:
+                        SharedPreferences shared12 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+
+                        SharedPreferences.Editor editor12 = shared12.edit();
+
+                        editor12.clear();
+                        editor12.commit();
                         Intent ih = new Intent(Share_main.this, HistoryActivity.class);
+                        g.setfavflag(2);
                         startActivity(ih);
                         finish();
                         break;
                     case 6:
+                        SharedPreferences shared13 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+
+                        SharedPreferences.Editor editor13 = shared13.edit();
+
+                        editor13.clear();
+                        editor13.commit();
                         //   RelativeLayout r1=(RelativeLayout)findViewById(R.id.r1);
                         Intent ii = new Intent(Share_main.this, Setting_main.class);
                         startActivity(ii);
@@ -710,7 +750,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                                 //Check if package exists or not. If not then code
@@ -741,7 +781,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
 
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
@@ -757,7 +797,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
 
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
@@ -773,7 +813,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
 
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
@@ -789,7 +829,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                                 //Check if package exists or not. If not then code
@@ -804,7 +844,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                                 //Check if package exists or not. If not then code
@@ -816,9 +856,9 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                             } else {
                                 String phoneNo = r.getText().toString();
                                 if (selmsg1.equals("Send a message")) {
-                                    message = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    message = "I am here: " +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    message = "I am here: " + selmsg1 + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    message = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
                                 if (phoneNo.contains("[")) {
 

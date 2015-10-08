@@ -670,201 +670,203 @@ lim=shared1.getString("lim","");
             public void onClick(View v) {
 
                     if (check == 1) {
-                        String text;
+                        if (g.getauto() == 0) {
+                            String text;
 
-                        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-                        Date date1 = new Date(System.currentTimeMillis());
-                        final String d1 = sdf.format(date1);
-                        crnt = s.getText().toString();
-                        selmsg1 = msgg.getText().toString();
-                        seltime1 = du.getText().toString();
-                        selint = dut.getText().toString();
-                        if (seltime1.equals("Share for 15 minutes")) {
-                            //timers=15;
+                            SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+                            Date date1 = new Date(System.currentTimeMillis());
+                            final String d1 = sdf.format(date1);
+                            crnt = s.getText().toString();
+                            selmsg1 = msgg.getText().toString();
+                            seltime1 = du.getText().toString();
+                            selint = dut.getText().toString();
+                            if (seltime1.equals("Share for 15 minutes")) {
+                                //timers=15;
 
-                            timeee = 15 * 60 * 1000;
+                                timeee = 15 * 60 * 1000;
 
-                        } else {
-                            int hour = 0;
-                            int minute = 0;
-                            SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
-                            hrr = shared1.getString("hrr", "");
-                            min = shared1.getString("min", "");
-
-                            if (!hrr.equals("")) {
-                                hour = Integer.parseInt(hrr);
-                                //timeee=hrr*60*60*1000+
-
-                            }
-                            if (!min.equals("")) {
-                                minute = Integer.parseInt(min);
-                            }
-
-                            timeee = hour * 60 * 60 * 1000 + minute * 60 * 1000;
-
-                        }
-                        desti = ddd.getText().toString();
-                        rcp = r.getText().toString();
-
-                        if (!rcp.equals("Select Contact")) {
-                            if (rcp.equals("Facebook")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.facebook.katana");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("WhatsApp")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.whatsapp");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("Hangouts")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.google.android.talk");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("Messaging") || (rcp.equals("Messages"))) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.android.mms");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("Skype")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.skype.raider");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("Yahoo Mail")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.yahoo.mobile.client.android.mail");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("Twitter")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.twitter.android");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
-                            } else if (rcp.equals("Messenger")) {
-                                Intent waIntent = new Intent(Intent.ACTION_SEND);
-                                waIntent.setType("text/plain");
-                                if (selmsg1.equals("Send a message")) {
-                                    text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                } else {
-                                    text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
-                                }
-                                // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-                                //Check if package exists or not. If not then code
-                                //in catch block will be called
-                                waIntent.setPackage("com.facebook.orca");
-
-                                waIntent.putExtra(Intent.EXTRA_TEXT, text);
-                                startActivity(Intent.createChooser(waIntent, "Share with"));
                             } else {
-                                phoneNo = r.getText().toString();
-                                if(!selint.equals("Set limit to send messages")) {
-                                    if (phoneNo.contains("[")) {
-                                        sub = phoneNo.substring(1, phoneNo.length() - 1);
-                                        str = sub.replaceAll("[^+,0-9]+", " ");
+                                int hour = 0;
+                                int minute = 0;
+                                SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+                                hrr = shared1.getString("hrr", "");
+                                min = shared1.getString("min", "");
 
-                                        int foo = Integer.parseInt(selint);
-                                        long tt = timeee / (foo * 1000);
-                                        String myString = Long.toString(tt);
-                                        new MySmsTask().execute(str, selint, myString);
+                                if (!hrr.equals("")) {
+                                    hour = Integer.parseInt(hrr);
+                                    //timeee=hrr*60*60*1000+
+
+                                }
+                                if (!min.equals("")) {
+                                    minute = Integer.parseInt(min);
+                                }
+
+                                timeee = hour * 60 * 60 * 1000 + minute * 60 * 1000;
+
+                            }
+                            desti = ddd.getText().toString();
+                            rcp = r.getText().toString();
+
+                            if (!rcp.equals("Select Contact")) {
+                                if (rcp.equals("Facebook")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                     } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.facebook.katana");
 
-                                        int foo = Integer.parseInt(selint);
-                                        long tt = timeee / (foo * 1000);
-                                        String myString = Long.toString(tt);
-                                        new MySmsTask1().execute(phoneNo, selint, myString);
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("WhatsApp")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.whatsapp");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("Hangouts")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.google.android.talk");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("Messaging") || (rcp.equals("Messages"))) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.android.mms");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("Skype")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.skype.raider");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("Yahoo Mail")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.yahoo.mobile.client.android.mail");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("Twitter")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.twitter.android");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else if (rcp.equals("Messenger")) {
+                                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                                    waIntent.setType("text/plain");
+                                    if (selmsg1.equals("Send a message")) {
+                                        text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    } else {
+                                        text = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    }
+                                    // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                                    //Check if package exists or not. If not then code
+                                    //in catch block will be called
+                                    waIntent.setPackage("com.facebook.orca");
+
+                                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                                } else {
+                                    phoneNo = r.getText().toString();
+                                    if (!selint.equals("Set limit to send messages")) {
+                                        if (phoneNo.contains("[")) {
+                                            sub = phoneNo.substring(1, phoneNo.length() - 1);
+                                            str = sub.replaceAll("[^+,0-9]+", " ");
+
+                                            int foo = Integer.parseInt(selint);
+                                            long tt = timeee / (foo * 1000);
+                                            String myString = Long.toString(tt);
+                                            g.setauto(1);
+                                            new MySmsTask().execute(str, selint, myString);
+                                        } else {
+
+                                            int foo = Integer.parseInt(selint);
+                                            long tt = timeee / (foo * 1000);
+                                            String myString = Long.toString(tt);
+                                            g.setauto(1);
+                                            new MySmsTask1().execute(phoneNo, selint, myString);
+                                        }
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Plese select limit for sending message", Toast.LENGTH_LONG).show();
                                     }
                                 }
-                                else {
-                                Toast.makeText(getApplicationContext(),"Plese select limit for sending message", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                          //  LatLng dest = getLocationFromAddress(desti);
-                            hid = g.gethid();
-                            id = Integer.toString(hid);
+                                //  LatLng dest = getLocationFromAddress(desti);
+                                hid = g.gethid();
+                                id = Integer.toString(hid);
 
 
-                            //  boolean result = sqliteHelper1.saveUser(id,time1);
-                            hid = Integer.parseInt(id);
-                            hid = hid + 1;
-                            g.sethid(hid);
+                                //  boolean result = sqliteHelper1.saveUser(id,time1);
+                                hid = Integer.parseInt(id);
+                                hid = hid + 1;
+                                g.sethid(hid);
 
-                            //  boolean result = sqliteHelper3.saveUser(id,timeee);
+                                //  boolean result = sqliteHelper3.saveUser(id,timeee);
                        /* if(!crnt.equals("Not able to find current location")) {
                             desti=ddd.getText().toString();
                             // Toast.makeText(getApplicationContext(), desti, Toast.LENGTH_LONG).show();
@@ -886,12 +888,12 @@ lim=shared1.getString("lim","");
                         {
                             Toast.makeText(getApplicationContext(), "Current not available", Toast.LENGTH_SHORT).show();
                         }*/
-                            CountDownTimer countDownTimer = new CountDownTimer(timeee, 1000) {
+                                CountDownTimer countDownTimer = new CountDownTimer(timeee, 1000) {
 
-                                @Override
-                                public void onTick(long millisUntilFinished) {
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
 
-                                    g.setData(1000);
+                                        g.setData(1000);
                           /*  if(isNetworkAvailable()) {
                                 locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
                                 Criteria criteria = new Criteria();
@@ -942,43 +944,43 @@ lim=shared1.getString("lim","");
                                 locationManager.removeUpdates(Share_main.this);
                              //   Toast.makeText(getApplicationContext(), "You are not connected to internet right now.Services will be called after internet connectivity", Toast.LENGTH_SHORT).show();
                             }*/
-                                    //txt.setText("seconds remaining: " + millisUntilFinished / 1000);
-                                    String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished), TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
-                                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
-                                    System.out.println(hms);
-                                    g.setsstatus(1);
-                                    // txt.setText(hms);
-                                    time1 = millisUntilFinished;
-                                    // time1=4;
-                                    flag = 0;
-                                    fs = 0;
+                                        //txt.setText("seconds remaining: " + millisUntilFinished / 1000);
+                                        String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished), TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+                                                TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
+                                        System.out.println(hms);
+                                        g.setsstatus(1);
+                                        // txt.setText(hms);
+                                        time1 = millisUntilFinished;
+                                        // time1=4;
+                                        flag = 0;
+                                        fs = 0;
 
 
-                                    boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
+                                        boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
 
-                                    //}
-                                }
+                                        //}
+                                    }
 
-                                @Override
-                                public void onFinish() {
-                                    SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
+                                    @Override
+                                    public void onFinish() {
+                                        SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
 
-                                    SharedPreferences.Editor editor = shared1.edit();
+                                        SharedPreferences.Editor editor = shared1.edit();
 
-                                    editor.clear();
-                                    editor.commit();
-                                    fs = 1;
-                                    time1 = 0L;
-                                    g.setData(300);
-                                    g.setsstatus(0);
-                                    //locationManager.removeUpdates(Share_main.this);
-                                    //txt.setText("done");
-                                    flag = 0;
+                                        editor.clear();
+                                        editor.commit();
+                                        fs = 1;
+                                        time1 = 0L;
+                                        g.setData(300);
+                                        g.setsstatus(0);
+                                        //locationManager.removeUpdates(Share_main.this);
+                                        //txt.setText("done");
+                                        flag = 0;
 
-                                    //    Toast.makeText(getApplicationContext(),""+id+"   "+time1+" "+flag, Toast.LENGTH_LONG).show();
-                                    boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
-                                }
-                            }.start();
+                                        //    Toast.makeText(getApplicationContext(),""+id+"   "+time1+" "+flag, Toast.LENGTH_LONG).show();
+                                        boolean result = sqliteHelper1.saveUser(id, time1, flag, d1, rcp, desti, selmsg1, seltime1, crnt, fs);
+                                    }
+                                }.start();
 
 //                if (phoneNo.length()>0 && message.length()>0)
 //                    sendSMS(phoneNo, message);
@@ -988,15 +990,21 @@ lim=shared1.getString("lim","");
 //                        Toast.LENGTH_SHORT).show();
 
 
-                            // } catch (PackageManager.NameNotFoundException e) {
-                            //   Toast.makeText(Share_main.this, "WhatsApp not Installed", Toast.LENGTH_SHORT)
-                            //   .show();
-                            //   }
+                                // } catch (PackageManager.NameNotFoundException e) {
+                                //   Toast.makeText(Share_main.this, "WhatsApp not Installed", Toast.LENGTH_SHORT)
+                                //   .show();
+                                //   }
 
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Please select contact", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Please select contact", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    } else {
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(), "You have already used auto share service ...please wait to be completed it", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
                         Toast.makeText(getApplicationContext(), "Please enable share functionality from Setting option", Toast.LENGTH_LONG).show();
                     }
 
@@ -1397,7 +1405,15 @@ lim=shared1.getString("lim","");
 
                 }
                 if(!address.equals("null")&& !city.equals("null")&& !country.equals("null")) {
-                    message = "I am here-" + "Lat-" + location.getLongitude() + "Long-" + location.getLatitude() + " " + address + "," + city + "," + country;
+
+                    if(!desti.equals("Define your destination")) {
+                        // if (!address.equals("null") && !city.equals("null") && !country.equals("null")) {
+                        message = "I am here-" + "Lat-" + location.getLongitude() + "Long-" + location.getLatitude() + " " + address + "," + city + "," + country + " going to " + desti;
+                    }
+                    else
+                    {
+                        message = "I am here-" + "Lat-" + location.getLongitude() + "Long-" + location.getLatitude() + " " + address + "," + city + "," + country;
+                    }
                 }
                 else
                 {
@@ -1417,7 +1433,8 @@ lim=shared1.getString("lim","");
 
         @Override
         protected void onPostExecute(Integer result) {
-            Toast.makeText(getBaseContext(), "Sent " + result + " messages", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Sent " + result + " messages and Auto sharing completed ", Toast.LENGTH_SHORT).show();
+            g.setauto(0);
         }
     }
 
@@ -1444,9 +1461,14 @@ lim=shared1.getString("lim","");
         knownName = addresses.get(0).getFeatureName();
     } catch (Exception e) {
     }
-
-   // if (!address.equals("null") && !city.equals("null") && !country.equals("null")) {
-        message = "I am here-" + "Lat-" + location.getLongitude() + "Long-" + location.getLatitude() + " " + address + "," + city + "," + country;
+if(!desti.equals("Define your destination")) {
+    // if (!address.equals("null") && !city.equals("null") && !country.equals("null")) {
+    message = "I am here-" + "Lat-" + location.getLongitude() + "Long-" + location.getLatitude() + " " + address + "," + city + "," + country + " going to " + desti;
+}
+       else
+{
+    message = "I am here-" + "Lat-" + location.getLongitude() + "Long-" + location.getLatitude() + " " + address + "," + city + "," + country;
+}
   //  }
 }
                else
@@ -1479,7 +1501,8 @@ lim=shared1.getString("lim","");
 
         @Override
         protected void onPostExecute(Integer result) {
-            Toast.makeText(getBaseContext(), "Sent " + result + " messages", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Sent " + result + " messages and Auto sharing completed", Toast.LENGTH_SHORT).show();
+            g.setauto(0);
         }
     }
     public  boolean hasActiveInternetConnection() {

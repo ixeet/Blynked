@@ -498,7 +498,7 @@ public class Favourite_main extends ActionBarActivity {
                                                                                   addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
                                                                                   addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
                                                                                           Intent.ShortcutIconResource.fromContext(Favourite_main.this,
-                                                                                                  R.mipmap.aap_icon));
+                                                                                                  R.mipmap.bg_logo));
 
                                                                                   addIntent
                                                                                           .setAction("com.android.launcher.action.INSTALL_SHORTCUT")                                                                                  ;
@@ -529,7 +529,7 @@ public class Favourite_main extends ActionBarActivity {
                                                                                   addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
                                                                                   addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
                                                                                           Intent.ShortcutIconResource.fromContext(Favourite_main.this,
-                                                                                                  R.mipmap.aap_icon));
+                                                                                                  R.mipmap.bg_logo));
 
                                                                                   addIntent
                                                                                           .setAction("com.android.launcher.action.UNINSTALL_SHORTCUT");

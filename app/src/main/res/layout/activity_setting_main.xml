@@ -116,17 +116,17 @@ android:layout_marginTop="10dp"
                     android:background="#ff11a3f1"
                     android:layout_below="@+id/listOfgeneral"
                     android:id="@+id/vh"/>
-                    <ListView
-                        android:id="@+id/listOflink"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:groupIndicator="@null"
-                        android:layout_below="@+id/vh"/>
-                <View
+                <RelativeLayout android:id="@+id/facebook" android:padding="10dp" android:layout_below="@+id/vh" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:id="@+id/lab" android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp" android:layout_centerVertical="true" android:gravity="center" android:textColor="#ff11a3f1" android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:text="Facebook"/>
+                <Button android:id="@+id/fb"
+                    android:layout_height="wrap_content" android:textStyle="bold" android:background="#ff11a3f1" android:layout_alignParentRight="true" android:layout_width="wrap_content" android:textColor="#fff" android:text="login"/>
+                </RelativeLayout>
+                    <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#ff11a3f1"
-                    android:layout_below="@+id/listOflink"
+                    android:layout_below="@+id/facebook"
                     android:id="@+id/vh11"/>
 <!--
             <RelativeLayout

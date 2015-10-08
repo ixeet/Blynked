@@ -671,9 +671,27 @@ public class Selectr extends ActionBarActivity implements View.OnClickListener, 
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(this, Share_main.class);
-        startActivity(i);
-        finish();
+        progressBar = (CircleProgressBar) findViewById(R.id.pBar);
+        progressBar.setColorSchemeResources(android.R.color.holo_blue_light);
+        progressBar.setProgress(0);
+        progressBar.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+
+            /*
+             * Showing splash screen with a timer. This will be useful when you
+             * want to show case your app logo / company
+             */
+
+            @Override
+            public void run() {
+                Intent ii1 = new Intent(Selectr.this, Share_main.class);
+                //statusCheck();
+                startActivity(ii1);
+                finish();
+                // close this activity
+
+            }
+        }, SPLASH_TIME_OUT);
     }
 
 

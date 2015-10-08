@@ -22,7 +22,8 @@ public class Globals extends Application {
     int exp=1;
     int yes=0;
     int s=0;
-
+    int auto=0;
+    int fb=0;
 
 
     public PackageInfo getPackageInfo() {
@@ -117,5 +118,16 @@ public class Globals extends Application {
     public void sets(int d){
         this.s=d;
     }
-
+    public int getauto(){
+        return this.auto;
+    }
+    public void setauto(int d){
+        this.auto=d;
+    }
+    public int getfb(){
+        return this.fb;
+    }
+    public void setfb(int d){
+        this.fb=d;
+    }
 }

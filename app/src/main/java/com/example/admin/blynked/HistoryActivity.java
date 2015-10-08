@@ -332,13 +332,13 @@ public class HistoryActivity extends ActionBarActivity {
 
                 final TextView textview111 = new TextView(HistoryActivity.this);
                 final RelativeLayout.LayoutParams lpTextView111 = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        250,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 textview111.setId(View.generateViewId());
                 textview111.setLayoutParams(lpTextView111);
                 if(!desti.equals("Define your destination")) {
-                    textview111.setText(crnt + "-" + desti);
+                    textview111.setText(crnt + "--->" + desti);
                     textview111.setTypeface(Typeface.DEFAULT_BOLD);
                 }
                 else
@@ -386,7 +386,7 @@ public class HistoryActivity extends ActionBarActivity {
                 button1.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.delete), null, null, null);
                 button1.setTextSize(15);
                 final RelativeLayout.LayoutParams b11 = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 b11.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 b11.setMargins(0, 5, 0, 0);
@@ -404,7 +404,7 @@ public class HistoryActivity extends ActionBarActivity {
                // rs.setCompoundDrawables();
                 rs.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.resend), null, null, null);
                 final RelativeLayout.LayoutParams rss = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 //  rss.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 rss.addRule(RelativeLayout.BELOW, button1.getId());
@@ -567,13 +567,13 @@ public class HistoryActivity extends ActionBarActivity {
                 relativeLayout.setLayoutParams(new android.view.ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 final TextView textview111 = new TextView(HistoryActivity.this);
                 final RelativeLayout.LayoutParams lpTextView111 = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        250,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 textview111.setId(View.generateViewId());
                 textview111.setLayoutParams(lpTextView111);
                 if(!desti.equals("Define your destination")) {
-                    textview111.setText(crnt + "-" + desti);
+                    textview111.setText(crnt + "->" + desti);
                 }
                 else
                 {
@@ -612,7 +612,7 @@ public class HistoryActivity extends ActionBarActivity {
                 //  button.setLayoutParams(new android.view.ViewGroup.LayoutParams(60, 60));
                 button1.setText("Delete");
                 final RelativeLayout.LayoutParams b11 = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 b11.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 b11.setMargins(0, 5, 0, 0);
@@ -633,7 +633,7 @@ public class HistoryActivity extends ActionBarActivity {
                 rs.setBackgroundColor(Color.TRANSPARENT);
                rs.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.mipmap.icn_modify), null, null, null);
                 final RelativeLayout.LayoutParams rss = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 //  rss.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 rss.addRule(RelativeLayout.BELOW, button1.getId());
@@ -665,7 +665,7 @@ public class HistoryActivity extends ActionBarActivity {
                 button.setBackgroundColor(Color.TRANSPARENT);
                 button.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.mipmap.icn_stop), null, null, null);
                 final RelativeLayout.LayoutParams b1 = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 b1.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 b1.setMargins(0, 5, 0, 0);

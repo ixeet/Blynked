@@ -29,7 +29,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.google.android.gms:play-services:7.5.0'
     compile files('libs/gson-2.2.4.jar')
-    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+    compile project(':facebook')
+    compile files('libs/socialauth-4.4.jar')
+    compile files('libs/facebook.jar')
 
 
 }
