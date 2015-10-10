@@ -64,23 +64,10 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:exported="true"
-            android:launchMode="singleTask"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
 
-
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="191.239.57.54"
-
-                    android:scheme="http" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Splash"
@@ -92,7 +79,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Share_main"
             android:label="" >
@@ -195,7 +181,23 @@
         <activity
             android:name=".Selectmsg1"
             android:label="@string/title_activity_selectmsg1"
-            android:windowSoftInputMode="stateAlwaysHidden">
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name=".MainActivity1"
+
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="191.239.57.54"
+                    android:scheme="http" />
+            </intent-filter>
         </activity>
     </application>
 

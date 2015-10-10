@@ -52,7 +52,7 @@
                 android:id="@+id/pBar"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 app:mlpb_enable_circle_background="false"
                 android:visibility="invisible"

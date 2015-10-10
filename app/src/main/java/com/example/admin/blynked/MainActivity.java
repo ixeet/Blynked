@@ -1451,6 +1451,9 @@ String idd=""+g.gets();
 
                                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(
                                         new LatLng(clat1, clong1), 15));
+                                me.setText("You are viewing location of "+userName);
+                                spd.setVisibility(View.GONE);
+                                st.setVisibility(View.GONE);
                                  }
                            // Toast.makeText(getApplicationContext(), ""+clat+""+clong+""+userName, Toast.LENGTH_LONG).show();
                           //  Toast.makeText(getApplicationContext(), imei, Toast.LENGTH_LONG).show();
@@ -1733,6 +1736,9 @@ String idd=""+g.gets();
 
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(
                         new LatLng(clat1, clong1), 15));
+                me.setText("You are viewing location of "+userName);
+                spd.setVisibility(View.GONE);
+                st.setVisibility(View.GONE);
             }
         }
      /*   if(g.getyes()==1)

@@ -333,16 +333,10 @@ public class Selectblynked extends ActionBarActivity implements  View.OnClickLis
                 crContacts.moveToNext();
             }
             crContacts.close();
-           // name1 = conNames.toArray(new String[conNames.size()]);
+
             OtherName1 = conNumbers.toArray(new String[conNumbers.size()]);
 
 
-           /* countrylist1 = new ArrayList<DataModel1>();
-            for (int i = 0; i < conNames.size(); i++) {
-                DataModel1 country = new DataModel1(name1[i], OtherName1[i]);
-                countrylist1.add(country);
-            }*/
-           // custom1 = new Adapterr(getApplicationContext(), countrylist1);
 
             JSONObject Parent = new JSONObject();
             JSONArray array = new JSONArray();
