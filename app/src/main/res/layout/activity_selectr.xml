@@ -96,15 +96,9 @@
                     android:layout_below="@+id/atv_places1"
                     android:background="#ff11a3f1" />
             </RelativeLayout>
-            <View
 
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:id="@+id/nn1"
-                android:layout_below="@+id/footer"
-                android:background="#ff11a3f1" />
 
-            <ListView android:id="@+id/sapps" android:layout_marginTop="10dp" android:layout_below="@+id/nn1" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <ListView android:id="@+id/sapps" android:layout_marginTop="10dp" android:layout_below="@+id/footer" android:layout_width="match_parent" android:layout_height="wrap_content"/>
 
             <RelativeLayout android:id="@+id/blynked" android:layout_height="70dp"
                 android:layout_width="fill_parent"

@@ -24,6 +24,7 @@ public class Globals extends Application {
     int s=0;
     int auto=0;
     int fb=0;
+    int share=0;
 
 
     public PackageInfo getPackageInfo() {
@@ -129,5 +130,11 @@ public class Globals extends Application {
     }
     public void setfb(int d){
         this.fb=d;
+    }
+    public int getshare(){
+        return this.share;
+    }
+    public void setshare(int d){
+        this.share=d;
     }
 }

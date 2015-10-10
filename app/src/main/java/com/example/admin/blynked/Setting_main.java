@@ -197,6 +197,9 @@ e1=(EditText)findViewById(R.id.e1);
         {
             fb.setText("Logout");
         }
+        Toast.makeText(getApplicationContext(),
+                "share"+g.getshare(),
+                Toast.LENGTH_LONG).show();
         fb.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
