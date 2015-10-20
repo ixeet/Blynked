@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/build/intermediates/bundles/debug/res/values-ml/values-ml.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/build/intermediates/bundles/debug/res/values-ml/values-ml.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">ചിത്രം ഡൗൺലോഡുചെയ്യുന്നതിൽ അപ്രതീക്ഷിത പിശക് സംഭവിച്ചു.</string>
     <string name="com_facebook_internet_permission_error_message">WebView ലോഗിന് ഇന്റർനെറ്റ് അനുമതി ആവശ്യമാണ്</string>

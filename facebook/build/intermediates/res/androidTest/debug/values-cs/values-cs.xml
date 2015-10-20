@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/build/intermediates/bundles/debug/res/values-cs/values-cs.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/build/intermediates/bundles/debug/res/values-cs/values-cs.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">Při stahování obrázku došlo k nečekané chybě.</string>
     <string name="com_facebook_internet_permission_error_message">Webové přihlášení vyžaduje oprávnění použít INTERNET</string>

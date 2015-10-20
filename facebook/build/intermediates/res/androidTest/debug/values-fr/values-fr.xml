@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/build/intermediates/bundles/debug/res/values-fr/values-fr.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/build/intermediates/bundles/debug/res/values-fr/values-fr.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">Une erreur inattendue s’est produite au moment de télécharger une image.</string>
     <string name="com_facebook_internet_permission_error_message">La connexion au web nécessite une autorisation d’accéder à INTERNET</string>

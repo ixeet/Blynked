@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-it/strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-it/strings.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">Errore imprevisto durante il
         caricamento di un\'immagine.</string>
@@ -20,7 +20,7 @@
     <string name="com_facebook_send_button_text">Invia</string>
     <string name="com_facebook_share_button_text">Condividi</string>
     <string name="com_facebook_tooltip_default">Novità! Il controllo è nelle tue mani: scegli quali informazioni condividere con le applicazioni.</string>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-it/messenger_button_strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-it/messenger_button_strings.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Invia</string>
 </resources>

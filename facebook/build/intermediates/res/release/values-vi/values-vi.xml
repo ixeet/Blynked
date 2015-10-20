@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-vi/strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-vi/strings.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">Lỗi bất ngờ khi tải ảnh xuống.</string>
     <string name="com_facebook_internet_permission_error_message">Đăng nhập WebView yêu cầu INTERNET cho phép</string>
@@ -18,7 +18,7 @@
     <string name="com_facebook_send_button_text">Gửi</string>
     <string name="com_facebook_share_button_text">Chia sẻ</string>
     <string name="com_facebook_tooltip_default">Mới! Bạn đang có quyền kiểm soát - hãy chọn thông tin bạn muốn chia sẻ với các ứng dụng.</string>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-vi/messenger_button_strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-vi/messenger_button_strings.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Gửi</string>
 </resources>

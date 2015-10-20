@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-ru/strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-ru/strings.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">При загрузке изображения возникла неожиданная ошибка.</string>
     <string name="com_facebook_internet_permission_error_message">Для входа в WebView необходимо разрешение INTERNET</string>
@@ -18,7 +18,7 @@
     <string name="com_facebook_send_button_text">Отправить</string>
     <string name="com_facebook_share_button_text">Поделиться</string>
     <string name="com_facebook_tooltip_default">Новинка! У вас все под контролем — выбирайте, какой информацией вы хотите поделиться с приложениями.</string>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-ru/messenger_button_strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-ru/messenger_button_strings.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Отпр</string>
 </resources>

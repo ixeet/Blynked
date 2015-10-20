@@ -246,7 +246,7 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
     Double clat1,clong1;
     Sharesqlite sqliteHelper;
     float speed;
-    final String[] items = {"Priyanka", "Ankur", "Ankit"};
+
     final boolean[] selected = {false, false, false};
     ProgressDialog pDialog;
     private static final CharSequence[] MAP_TYPE_ITEMS =
@@ -1681,7 +1681,7 @@ String idd=""+g.gets();
         bestProvider = locationManager.getBestProvider(criteria, true);
         location = locationManager.getLastKnownLocation(bestProvider);
         ll = location;
-        Toast.makeText(getApplicationContext(),"Sharedglob is"+g.getshare(),Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),"Sharedglob is"+g.getshare(),Toast.LENGTH_LONG).show();
         if(g.getshare()==1)
         {
             SharedPreferences sharedPreferences1 = getSharedPreferences(STORAGE_LOC, Context.MODE_PRIVATE);
@@ -1689,7 +1689,7 @@ String idd=""+g.gets();
             clat = sharedPreferences1.getString("clat", "");
             clong= sharedPreferences1.getString("clong","");
             userName = sharedPreferences1.getString("userName", "");
-            Toast.makeText(getApplicationContext(),"onMap ready"+clat+clong,Toast.LENGTH_LONG).show();
+          //  Toast.makeText(getApplicationContext(),"onMap ready"+clat+clong,Toast.LENGTH_LONG).show();
             if(!clat.equals("")) {
                 clat1 = Double.parseDouble(clat);
                 clong1 = Double.parseDouble(clong);
@@ -2473,7 +2473,7 @@ String idd=""+g.gets();
             // dismiss the dialog once product deleted
 
             progressBar.setVisibility(View.INVISIBLE);
-            Toast.makeText(getApplicationContext(),clat+clong+userName,Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),clat+clong+userName,Toast.LENGTH_LONG).show();
 
          //
         }

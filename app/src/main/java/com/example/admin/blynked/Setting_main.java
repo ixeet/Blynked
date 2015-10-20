@@ -197,9 +197,9 @@ e1=(EditText)findViewById(R.id.e1);
         {
             fb.setText("Logout");
         }
-        Toast.makeText(getApplicationContext(),
+      /*  Toast.makeText(getApplicationContext(),
                 "share"+g.getshare(),
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();*/
         fb.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -1140,7 +1140,7 @@ e1=(EditText)findViewById(R.id.e1);
             p11 = stringbuilder.toString();
 
 
-            Toast.makeText(Setting_main.this, "Sent "+p11, Toast.LENGTH_LONG).show();
+           // Toast.makeText(Setting_main.this, "Sent "+p11, Toast.LENGTH_LONG).show();
 
        } catch (IOException ee) {
             ee.printStackTrace();

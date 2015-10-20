@@ -312,6 +312,7 @@ public class HistoryActivity extends ActionBarActivity {
                 crnt = cursor.getString(cursor.getColumnIndex("crnt"));
                 desti = cursor.getString(cursor.getColumnIndex("desti"));
             }
+            cursor.close();
             Cursor cursor1 = sqliteHelper2.getUser(p);
             if (cursor1.getCount() != 0) {
                 cursor1.moveToFirst();
@@ -321,7 +322,7 @@ public class HistoryActivity extends ActionBarActivity {
                 //  Toast.makeText(getApplicationContext(),"idd="+idd+""+"flaggg="+flaggg, Toast.LENGTH_LONG).show();
 
             }
-
+            cursor1.close();
             if (flaggg == 1 && idd1.equals(idd) ) {
                 final RelativeLayout relativeLayout = new RelativeLayout(HistoryActivity.this);
                 // relativeLayout.setPadding(5, 10, 5, 10);
@@ -488,6 +489,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 // sqliteHelper2.update(idd,1);
                             }
+                            cursor.close();
                             SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = shared1.edit();
                             editor.putString("destination", desti);
@@ -547,7 +549,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 sqliteHelper2.saveUser(idd, 2);
                             }
                             // zoomImageFromThumb(image, selectedImage);
-
+cursor.close();
                             glayout.removeView(relativeLayout);
                             //    Toast.makeText(getApplicationContext(), "deleted", Toast.LENGTH_LONG).show();
 
@@ -767,6 +769,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 // sqliteHelper2.update(idd,1);
                             }
+                            cursor.close();
                             SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = shared1.edit();
                             editor.putString("destination", desti);
@@ -826,6 +829,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 sqliteHelper2.saveUser(idd, 1);
                             }
+                            cursor.close();
                             new Expire().execute();
                             // zoomImageFromThumb(image, selectedImage);
                             button.setVisibility(View.INVISIBLE);
@@ -857,6 +861,7 @@ public class HistoryActivity extends ActionBarActivity {
 
                                 sqliteHelper2.saveUser(idd, 2);
                             }
+                            cursor.close();
                             // zoomImageFromThumb(image, selectedImage);
 
                             glayout.removeView(relativeLayout);

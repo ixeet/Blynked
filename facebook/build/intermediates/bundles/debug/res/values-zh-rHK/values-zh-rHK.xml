@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-zh-rHK/strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-zh-rHK/strings.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">下載圖像時發生預期外的錯誤。</string>
     <string name="com_facebook_internet_permission_error_message">WebView 登入需有 INTERNET 權限</string>
@@ -18,7 +18,7 @@
     <string name="com_facebook_send_button_text">傳送</string>
     <string name="com_facebook_share_button_text">分享</string>
     <string name="com_facebook_tooltip_default">最新消息！控制權在您 - 選擇您要與應用程式分享的資訊。</string>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-zh-rHK/messenger_button_strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-zh-rHK/messenger_button_strings.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">傳送</string>
 </resources>

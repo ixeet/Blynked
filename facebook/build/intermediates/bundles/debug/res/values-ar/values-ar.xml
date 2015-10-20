@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-ar/strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-ar/strings.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">حدث خطأ غير متوقع أثناء تنزيل صورة.</string>
     <string name="com_facebook_internet_permission_error_message">يتطلب تسجيل الدخول إلى WebView إذن الاتصال بالإنترنت</string>
@@ -18,7 +18,7 @@
     <string name="com_facebook_send_button_text">إرسال</string>
     <string name="com_facebook_share_button_text">مشاركة</string>
     <string name="com_facebook_tooltip_default">جديد! أنت المتحكم - اختر المعلومات التي تريد مشاركتها مع التطبيقات.</string>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-ar/messenger_button_strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-ar/messenger_button_strings.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">إرسال</string>
 </resources>

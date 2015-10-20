@@ -2149,7 +2149,7 @@ if(!desti.equals("Define your destination")) {
             //   pDialog.dismiss();
             if(file_url != null){
 
-                Toast.makeText(Share_main1.this, "With out destination initiated" + file_url, Toast.LENGTH_LONG).show();
+               // Toast.makeText(Share_main1.this, "With out destination initiated" + file_url, Toast.LENGTH_LONG).show();
 
             }
 
@@ -2224,7 +2224,7 @@ if(!desti.equals("Define your destination")) {
             //   pDialog.dismiss();
             if(file_url != null){
 
-                Toast.makeText(Share_main1.this, "With destination initiated "+ file_url, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(Share_main1.this, "With destination initiated "+ file_url, Toast.LENGTH_LONG).show();
 
             }
 
@@ -2362,7 +2362,7 @@ if(!desti.equals("Define your destination")) {
             //   pDialog.dismiss();
             if(file_url != null){
 
-                Toast.makeText(Share_main1.this, "locationchanged"+ file_url, Toast.LENGTH_LONG).show();
+               // Toast.makeText(Share_main1.this, "locationchanged"+ file_url, Toast.LENGTH_LONG).show();
 
 
             }

@@ -702,9 +702,9 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                             //timers=15;
 
                             timeee = 15 * 60 * 1000;
-                            Toast.makeText(getBaseContext(),
+                          /*  Toast.makeText(getBaseContext(),
                                     +timeee+"seconds k liye",
-                                    Toast.LENGTH_LONG).show();
+                                    Toast.LENGTH_LONG).show();*/
                         } else {
                             int hour = 0;
                             int minute = 0;
@@ -723,9 +723,9 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                             }
 
                             timeee = hour * 60 * 60 * 1000 + minute * 60 * 1000;
-                            Toast.makeText(getBaseContext(),
-                                    ""+timeee +"seconds k liye",
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getBaseContext(),
+//                                    ""+timeee +"seconds k liye",
+//                                    Toast.LENGTH_LONG).show();
 
                         }
                         if (!rcp.equals("Select Recipients")) {
@@ -735,7 +735,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "http://191.239.57.54:8080/Blynk/locate/"+uid;
                                 } else {
-                                    text = "http://191.239.57.54:8080/Blynk/locate/"+uid;
+                                    text = " http://191.239.57.54:8080/Blynk/locate/"+uid;
                                 }
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                                 //Check if package exists or not. If not then code
@@ -758,6 +758,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 waIntent.setPackage("com.whatsapp");
 
                                 waIntent.putExtra(Intent.EXTRA_TEXT, text);
+                              //  waIntent.putExtra(Intent.EXTRA_STREAM, "http://191.239.57.54:8080/Blynk/locate/" + uid);
                                 startActivity(Intent.createChooser(waIntent, "Share with"));
                             } else if (rcp.equals("Hangouts")) {
                                 Intent waIntent = new Intent(Intent.ACTION_SEND);
@@ -765,7 +766,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                                 if (selmsg1.equals("Send a message")) {
                                     text = "I am here: " + "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
-                                    text = "I am here: " + selmsg1 +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    text = "I am here: " + selmsg1 +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
 
                                 // PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
@@ -856,7 +857,7 @@ public class Share_main extends ActionBarActivity implements NumberPicker.OnValu
                             } else {
                                 String phoneNo = r.getText().toString();
                                 if (selmsg1.equals("Send a message")) {
-                                    message = "I am here: " +  " http://191.239.57.54:8080/Blynk/locate/" + uid;
+                                    message = "I am here: " +  "http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 } else {
                                     message = "I am here: " + selmsg1 + " http://191.239.57.54:8080/Blynk/locate/" + uid;
                                 }
@@ -2096,7 +2097,7 @@ class Initiate1 extends AsyncTask<String, String, String> {
             //   pDialog.dismiss();
             if(file_url != null){
 
-                Toast.makeText(Share_main.this, "With out destination initiated" + file_url, Toast.LENGTH_LONG).show();
+                //Toast.makeText(Share_main.this, "With out destination initiated" + file_url, Toast.LENGTH_LONG).show();
 
             }
 
@@ -2172,7 +2173,7 @@ class Initiate1 extends AsyncTask<String, String, String> {
             //   pDialog.dismiss();
             if(file_url != null){
 
-                Toast.makeText(Share_main.this, "With destination initiated "+ file_url, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(Share_main.this, "With destination initiated "+ file_url, Toast.LENGTH_LONG).show();
 
             }
 
@@ -2310,7 +2311,7 @@ class Initiate1 extends AsyncTask<String, String, String> {
             //   pDialog.dismiss();
             if(file_url != null){
 
-                Toast.makeText(Share_main.this, "Datafetch locationchanged"+ file_url, Toast.LENGTH_LONG).show();
+               // Toast.makeText(Share_main.this, "Datafetch locationchanged"+ file_url, Toast.LENGTH_LONG).show();
 
 
             }

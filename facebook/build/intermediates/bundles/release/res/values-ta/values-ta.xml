@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-ta/strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-ta/strings.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">படத்தைப் பதிவிறக்கும் போது பிழை ஏற்பட்டது.</string>
     <string name="com_facebook_internet_permission_error_message">WebView இல் உள்நுழைய இணைய அனுமதி தேவை</string>
@@ -18,7 +18,7 @@
     <string name="com_facebook_send_button_text">அனுப்பு</string>
     <string name="com_facebook_share_button_text">பகிர்</string>
     <string name="com_facebook_tooltip_default">புதிது! உங்கள் கட்டுப்பாட்டில் இருப்பதால், பயன்பாடுகளுடன் பகிர வேண்டிய தகவலைத் தேர்வுசெய்யவும்.</string>
-    <!-- From: file:/C:/Users/IXEET%20PC%209/Documents/GitHub/Blynked/facebook/res/values-ta/messenger_button_strings.xml -->
+    <!-- From: file:/E:/19%20latest/17octt%20blynked%20frm%20pc/Blynked/Blynked/facebook/res/values-ta/messenger_button_strings.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">அனுப்பு</string>
 </resources>
