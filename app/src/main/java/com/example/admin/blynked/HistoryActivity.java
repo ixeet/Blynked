@@ -24,7 +24,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,6 +45,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -93,6 +98,8 @@ public class HistoryActivity extends ActionBarActivity {
     ListView list_his;
     int flaggg;
     int flag;
+    TelephonyManager mngr;
+    String uid;
     GridLayout glayout;
     String[] name1;
     String[] time;
@@ -113,6 +120,8 @@ public class HistoryActivity extends ActionBarActivity {
         setContentView(com.example.admin.blynked.R.layout.activity_history);
         g = (Globals) this.getApplication();
         timer = g.gettimer();
+        mngr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        uid = mngr.getDeviceId();
         tool = (Toolbar) findViewById(R.id.tool_bar);
         sqliteHelper1 = new SqliteHelper1(this);
         sqliteHelper2 = new SqliteHelper2(this);
@@ -303,6 +312,7 @@ public class HistoryActivity extends ActionBarActivity {
                 crnt = cursor.getString(cursor.getColumnIndex("crnt"));
                 desti = cursor.getString(cursor.getColumnIndex("desti"));
             }
+            cursor.close();
             Cursor cursor1 = sqliteHelper2.getUser(p);
             if (cursor1.getCount() != 0) {
                 cursor1.moveToFirst();
@@ -312,7 +322,7 @@ public class HistoryActivity extends ActionBarActivity {
                 //  Toast.makeText(getApplicationContext(),"idd="+idd+""+"flaggg="+flaggg, Toast.LENGTH_LONG).show();
 
             }
-
+            cursor1.close();
             if (flaggg == 1 && idd1.equals(idd) ) {
                 final RelativeLayout relativeLayout = new RelativeLayout(HistoryActivity.this);
                 // relativeLayout.setPadding(5, 10, 5, 10);
@@ -323,13 +333,13 @@ public class HistoryActivity extends ActionBarActivity {
 
                 final TextView textview111 = new TextView(HistoryActivity.this);
                 final RelativeLayout.LayoutParams lpTextView111 = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        250,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 textview111.setId(View.generateViewId());
                 textview111.setLayoutParams(lpTextView111);
                 if(!desti.equals("Define your destination")) {
-                    textview111.setText(crnt + "-" + desti);
+                    textview111.setText(crnt + "--->" + desti);
                     textview111.setTypeface(Typeface.DEFAULT_BOLD);
                 }
                 else
@@ -377,7 +387,7 @@ public class HistoryActivity extends ActionBarActivity {
                 button1.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.delete), null, null, null);
                 button1.setTextSize(15);
                 final RelativeLayout.LayoutParams b11 = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 b11.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 b11.setMargins(0, 5, 0, 0);
@@ -395,7 +405,7 @@ public class HistoryActivity extends ActionBarActivity {
                // rs.setCompoundDrawables();
                 rs.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.resend), null, null, null);
                 final RelativeLayout.LayoutParams rss = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 //  rss.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 rss.addRule(RelativeLayout.BELOW, button1.getId());
@@ -479,6 +489,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 // sqliteHelper2.update(idd,1);
                             }
+                            cursor.close();
                             SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = shared1.edit();
                             editor.putString("destination", desti);
@@ -538,7 +549,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 sqliteHelper2.saveUser(idd, 2);
                             }
                             // zoomImageFromThumb(image, selectedImage);
-
+cursor.close();
                             glayout.removeView(relativeLayout);
                             //    Toast.makeText(getApplicationContext(), "deleted", Toast.LENGTH_LONG).show();
 
@@ -558,13 +569,13 @@ public class HistoryActivity extends ActionBarActivity {
                 relativeLayout.setLayoutParams(new android.view.ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 final TextView textview111 = new TextView(HistoryActivity.this);
                 final RelativeLayout.LayoutParams lpTextView111 = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        250,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 textview111.setId(View.generateViewId());
                 textview111.setLayoutParams(lpTextView111);
                 if(!desti.equals("Define your destination")) {
-                    textview111.setText(crnt + "-" + desti);
+                    textview111.setText(crnt + "->" + desti);
                 }
                 else
                 {
@@ -603,7 +614,7 @@ public class HistoryActivity extends ActionBarActivity {
                 //  button.setLayoutParams(new android.view.ViewGroup.LayoutParams(60, 60));
                 button1.setText("Delete");
                 final RelativeLayout.LayoutParams b11 = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 b11.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 b11.setMargins(0, 5, 0, 0);
@@ -624,7 +635,7 @@ public class HistoryActivity extends ActionBarActivity {
                 rs.setBackgroundColor(Color.TRANSPARENT);
                rs.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.mipmap.icn_modify), null, null, null);
                 final RelativeLayout.LayoutParams rss = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 //  rss.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 rss.addRule(RelativeLayout.BELOW, button1.getId());
@@ -656,7 +667,7 @@ public class HistoryActivity extends ActionBarActivity {
                 button.setBackgroundColor(Color.TRANSPARENT);
                 button.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.mipmap.icn_stop), null, null, null);
                 final RelativeLayout.LayoutParams b1 = new RelativeLayout.LayoutParams(
-                        150,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
                         70);
                 b1.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 b1.setMargins(0, 5, 0, 0);
@@ -758,6 +769,7 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 // sqliteHelper2.update(idd,1);
                             }
+                            cursor.close();
                             SharedPreferences shared1 = getSharedPreferences(STORAGE1, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = shared1.edit();
                             editor.putString("destination", desti);
@@ -817,6 +829,8 @@ public class HistoryActivity extends ActionBarActivity {
                                 // flag=1;
                                 sqliteHelper2.saveUser(idd, 1);
                             }
+                            cursor.close();
+                            new Expire().execute();
                             // zoomImageFromThumb(image, selectedImage);
                             button.setVisibility(View.INVISIBLE);
                             button1.setVisibility(View.VISIBLE);
@@ -847,6 +861,7 @@ public class HistoryActivity extends ActionBarActivity {
 
                                 sqliteHelper2.saveUser(idd, 2);
                             }
+                            cursor.close();
                             // zoomImageFromThumb(image, selectedImage);
 
                             glayout.removeView(relativeLayout);
@@ -866,7 +881,60 @@ public class HistoryActivity extends ActionBarActivity {
             p1--;
         }
     }
+    class Expire extends AsyncTask<String, String, String> {
 
+        /**
+         * Before starting background thread Show Progress Dialog
+         * */
+
+        String response;
+        boolean failure = false;
+        String gender;
+        int mflag,eflag;
+        int success;
+        String bg;
+        String c = null;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar =(CircleProgressBar)findViewById(R.id.pBar);
+            progressBar.setColorSchemeResources(android.R.color.holo_blue_light);
+            progressBar.setProgress(0);
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected String doInBackground(String... args) {
+            // TODO Auto-generated method stub
+            // Check for success tag
+
+            try {
+
+
+
+                String EXPIRE_URL ="http://191.239.57.54:8080/Blynk/StopShare?imeiNo="+uid;
+                GetJsonObject json=new GetJsonObject();
+                response =json.getWebServceObj(EXPIRE_URL);
+                Log.d("Stop response",response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return response;
+
+        }
+        /**
+         * After completing background task Dismiss the progress dialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once product deleted
+
+            progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(HistoryActivity.this,file_url, Toast.LENGTH_LONG).show();
+
+        }
+
+    }
     public static Bitmap decodeBase64(String input) {
         byte[] decodedByte = Base64.decode(input, 0);
         BitmapFactory.Options options = new BitmapFactory.Options();

@@ -16,6 +16,8 @@ import android.graphics.PorterDuff;
 import android.location.Address;
 import android.location.Geocoder;
 import android.media.ExifInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -45,9 +47,9 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.Profile;
-import com.facebook.ProfileTracker;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.maps.GoogleMap;
@@ -76,9 +78,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -89,19 +93,21 @@ public class Setting_main extends ActionBarActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     Bitmap selectedImage;
     ImageView bRate, bFeedback, bHelp,bAbout;
-    CustomListAdapter1 linkAdapter;
+ Button fb;
     CustemListAdapter2 genAdapter;
-    ListView LlistView,GlistView;
+    ListView GlistView;
     String[] itemLink;
     String[] itemGen;
     ArrayList<DataModelsetting> linkList;
     ArrayList<DataModelsetting1> genList;
+
+    private LoginManager manager;
     String textEmail;
     //CustemListAdapter cAdapter;
     //ListView bList;
     //List<String> listitem;
     Toolbar tool;
-    String imagepath;
+    String imagepath,str_id,fname;
     String p ="p";    LinearLayout lll;
     ArrayList<DataModel> countrylist;
     String[] name_list;
@@ -111,13 +117,14 @@ public class Setting_main extends ActionBarActivity {
     CustomAdapter cAdapter;
     ListView lv;
     EditText e1;
+    Profile profile;
     String name,imagePreferance = null;
     DrawerLayout drawerLayout;
     private static final int CONTAINER = R.id.fragment_container;
     ActionBarDrawerToggle mToggle;
     CharSequence mDrawerTitle;
     private int mTitle = R.string.app_name;
-
+    CallbackManager callbackManager;
     public static final String STORAGE_IMAGE = "Image";
     Integer[] img_id = {
             R.mipmap.icn_share_menu_drawer,
@@ -159,8 +166,6 @@ String phoneNo;
     Globals g;
     ListView rlv;
 
-    public static CallbackManager callbackManager;
-    ProfileTracker profileTracker;
     Intent data;
     private static int SPLASH_TIME_OUT = 3000;
     ProgressBar progressBar1;
@@ -171,8 +176,8 @@ String phoneNo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_main);
-
-
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        g = (Globals) getApplication();
         //this.mHandler = new Handler();
 
         //  this.mHandler.postDelayed(m_Runnable,5000);
@@ -180,8 +185,127 @@ String phoneNo;
 
 
         //   t111=(TextView)findViewById(R.id.textView1);
-
+        final List<String> permissionNeeds = Arrays.asList("publish_actions");
+        callbackManager = CallbackManager.Factory.create();
 e1=(EditText)findViewById(R.id.e1);
+        fb=(Button)findViewById(R.id.fb);
+        if(g.getfb()==0)
+        {
+            fb.setText("Login");
+        }
+        else
+        {
+            fb.setText("Logout");
+        }
+      /*  Toast.makeText(getApplicationContext(),
+                "share"+g.getshare(),
+                Toast.LENGTH_LONG).show();*/
+        fb.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                if (fb.getText().equals("Login")) {
+                    manager = LoginManager.getInstance();
+                    // manager.setLoginBehavior(LoginBehavior.SSO_WITH_FALLBACK);
+                    manager.logInWithPublishPermissions(Setting_main.this, permissionNeeds);
+                    manager.registerCallback(callbackManager,
+                            new FacebookCallback<LoginResult>() {
+                                @Override
+                                public void onSuccess(LoginResult loginResult) {
+                                    Log.d("accessyes", "" + loginResult.getAccessToken());
+                                    // App code
+                                    // Toast.makeText(getApplicationContext(), "yesss", Toast.LENGTH_SHORT).show();
+                                    System.out.println("Success");
+
+                                    //  loginbutton.setVisibility(View.INVISIBLE);
+                                    GraphRequest.newMeRequest(
+                                            loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                                                @Override
+                                                public void onCompleted(JSONObject json, GraphResponse response) {
+                                                    if (response.getError() != null) {
+                                                        // handle error
+                                                        System.out.println("ERROR");
+                                                    } else {
+                                                        System.out.println("Success");
+                                                        try {
+                                                            g.setfb(1);
+                                                            fb.setText("Logout");
+                                                            String jsonresult = String.valueOf(json);
+                                                            System.out.println("JSON Result" + jsonresult);
+
+                                                            // String str_email = json.getString("email");
+                                                            str_id = json.getString("id");
+                                                            fname = json.getString("name");
+                                                            Log.d("data fb", str_id + fname);
+                                                            profile = Profile.getCurrentProfile();
+                                                            if(profile!=null) {
+                                                                if (isNetworkAvailable()) {
+                                                                    new getc().execute();
+                                                                } else {
+                                                                    Toast.makeText(getApplicationContext(),
+                                                                            "Please connect to Internet",
+                                                                            Toast.LENGTH_LONG).show();
+                                                                }
+                                                            }
+                                                        } catch (JSONException e) {
+                                                            e.printStackTrace();
+                                                        }
+                                                        //  String str_lastname = json.getString("last_name");
+                                                        //   String link = json.getString("link");
+                                                        //   String gender = json.getString("gender");
+                                                        //Toast.makeText(getApplicationContext(), str_email, Toast.LENGTH_SHORT).show();
+                                                        //textView1.setText(str_email);
+                                                        //textView2.setText(str_id);
+                                                        //textView3.setText(str_firstname);
+                                                        //textView4.setText(link);
+                                                        //button.setEnabled(true);
+                                                        //verify.setText(str_email+""+name);
+
+
+                                                        //textView5.setText(fields);
+
+                                                    }
+                                                }
+
+                                            }).executeAsync();
+
+                                }
+
+                                //Intent i = new Intent(MainActivity.this, New.class);
+                                // startActivity(i);
+                                //        AccessToken accessToken = loginResult.getAccessToken();
+                                //       Profile profile = Profile.getCurrentProfile();
+                                //     displayMessage(profile);
+
+
+                                @Override
+                                public void onCancel() {
+                                    // App code
+                                    Log.d("fb cancel", "cancelled");
+                                }
+
+                                @Override
+                                public void onError(FacebookException exception) {
+                                    // App code
+                                    Log.d("fb error", exception.toString());
+                                }
+                            });
+                } else {
+                    selectedImage=null;
+                    e1.setText("");
+                    Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.proff);
+                    img_main.setImageBitmap(icon);
+                    SharedPreferences s2= getSharedPreferences(STORAGE_IMAGE, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = s2.edit();
+                    editor.putString("imagePreferance","");
+                    editor.putString("name","");
+                    editor.apply();
+                    editor.commit();
+                    LoginManager.getInstance().logOut();
+                    fb.setText("Login");
+                    g.setfb(0);
+                }
+            }
+            });
         e1.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
         if (tool != null) {
             setSupportActionBar(tool);
@@ -445,7 +569,7 @@ e1=(EditText)findViewById(R.id.e1);
             }
         });
 
-        g = (Globals)getApplication();
+
         flag=g.getFlag();
         SharedPreferences sharedPreferences = getSharedPreferences(STORAGE_IMAGE, Context.MODE_PRIVATE);
         //   boolean hasDrawable = (img_main.getDrawable() != null);
@@ -458,7 +582,7 @@ e1=(EditText)findViewById(R.id.e1);
         }
 
 
-        FacebookSdk.sdkInitialize(this.getApplicationContext());
+
 
         itemGen = getResources().getStringArray(R.array.general_list);
         itemLink=getResources().getStringArray(R.array.Link_List);
@@ -466,7 +590,7 @@ e1=(EditText)findViewById(R.id.e1);
         img_main = (ImageView) findViewById(R.id.imag_icon);
 
 //        pName.getBackground().setColorFilter(getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_ATOP);
-        LlistView = (ListView) findViewById(R.id.listOflink);
+
         GlistView = (ListView) findViewById(R.id.listOfgeneral);
         //expListViewgen.setTranscriptMode(ExpandableListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
         //bList=(ListView)findViewById(R.id.btnList);
@@ -489,31 +613,7 @@ e1=(EditText)findViewById(R.id.e1);
            // img_main.setImageBitmap(icon1);
         }
 
-        callbackManager = CallbackManager.Factory.create();
 
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-
-
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                // App code
-                updateProfile();
-            }
-
-            @Override
-            public void onCancel() {
-                // App code
-                updateProfile();
-            }
-
-            @Override
-            public void onError(FacebookException e) {
-
-                updateProfile();
-
-            }
-
-        });
 
 
 /*
@@ -565,11 +665,10 @@ e1=(EditText)findViewById(R.id.e1);
 
 
 
-        linkAdapter = new CustomListAdapter1(this,linkList);
+
         genAdapter = new CustemListAdapter2(Setting_main.this, this,genList);
         //cAdapter=new  CustemListAdapter(this,btnListArr);
 
-        LlistView.setAdapter(linkAdapter);
 
         GlistView.setAdapter(genAdapter);
         Helper.getListViewSize(GlistView);
@@ -598,7 +697,72 @@ e1=(EditText)findViewById(R.id.e1);
         });*/
     }
 
+    class getc extends AsyncTask<String, String, Bitmap> {
 
+        /**
+         * Before starting background thread Show Progress Dialog
+         */
+
+        Profile profile = Profile.getCurrentProfile();
+        URL url = null;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... args) {
+            // TODO Auto-generated method stub
+            // Check for success tag
+
+
+
+            try {
+
+                url = new URL("https://graph.facebook.com/"+profile.getId()+"/picture?type=large");
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            HttpURLConnection conn = null;
+            try {
+                conn = (HttpURLConnection) url.openConnection();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            HttpURLConnection.setFollowRedirects(true);
+            conn.setInstanceFollowRedirects(true);
+            //Bitmap fbpicture = null;
+            try {
+                selectedImage = BitmapFactory.decodeStream(conn.getInputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return selectedImage;
+
+
+
+
+
+
+        }
+
+        /**
+         * After completing background task Dismiss the progress dialog
+         * *
+         */
+        protected void onPostExecute(Bitmap photo) {
+
+            img_main.setImageBitmap(photo);
+            e1.setText(fname);
+            SharedPreferences s2= getSharedPreferences(STORAGE_IMAGE, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = s2.edit();
+            editor.putString("imagePreferance", encodeTobase64(photo));
+            editor.putString("name",fname);
+            editor.apply();
+            editor.commit();
+        }
+    }
 
    /* private void btnClickList() {
         listitem=new ArrayList<String>();
@@ -609,7 +773,18 @@ e1=(EditText)findViewById(R.id.e1);
         }
     }*/
 
+    public boolean isNetworkAvailable() {
 
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            Log.e("Network Testing", "***Available***");
+            return true;
+        }
+        Log.e("Network Testing", "***Not Available***");
+        return false;
+    }
     private void LinkedListData() {
         linkList=new ArrayList<DataModelsetting>();
         for (int i=0;i<itemLink.length;i++) {
@@ -847,7 +1022,7 @@ e1=(EditText)findViewById(R.id.e1);
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-
+        callbackManager.onActivityResult(requestCode, resultCode, imageReturnedIntent);
         switch(requestCode) {
             case SELECT_PHOTO:
                 if (resultCode == RESULT_OK) {
@@ -914,35 +1089,8 @@ e1=(EditText)findViewById(R.id.e1);
     }*/
 
 
-    private void updateProfile() {
-        Profile profile = Profile.getCurrentProfile();
-        if (profile != null) {
 
-            // loginButton.setText("Logout");
-            Log.d("Tag", "logout");
 
-        } else {
-
-            //loginButton.setText("Login");
-            Log.d("Tag", "login");
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Logs 'install' and 'app activate' App Events.
-        AppEventsLogger.activateApp(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        // Logs 'app deactivate' App Event.
-        AppEventsLogger.deactivateApp(this);
-    }
     private void storeRegIdinServer(final String username) {
 
         SharedPreferences sharedPreferences = getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE);
@@ -992,7 +1140,7 @@ e1=(EditText)findViewById(R.id.e1);
             p11 = stringbuilder.toString();
 
 
-            Toast.makeText(Setting_main.this, "Sent "+p11, Toast.LENGTH_LONG).show();
+           // Toast.makeText(Setting_main.this, "Sent "+p11, Toast.LENGTH_LONG).show();
 
        } catch (IOException ee) {
             ee.printStackTrace();

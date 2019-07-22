@@ -2,228 +2,228 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Admin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-f9cef91474bf564e8fb02beb135ac002c638f704.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\libs\commons-io-2.4.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\commons-io-2.4-24c82c92dd3796e1c4039af270c3da6f150f3e26.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-7138aa38c2dd92569473e31bc0429fe52b9cbe54.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-d66d83304100a00b26bf909b7335c6d14f9112a4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-ae0583ce2dc529bfa445b0436f5fa9a351ad2f13.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-b4a16b7250e2b66b927545e2c142b08cca4ff71e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-cc9d5c2a91ff4e6fd0a009fb37d087f88298bcb0.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-9b60fa516719cdf0b6aef3898fca79ac3d6958e1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-99228e76f17035eed86e181c4bc4d10a41a53596.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-db3649494cb7943fcbc730b81e80577fbc1c2b04.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-64a4efab42cf73980528ae8e311847b83445c927.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-99faf53f51fbf018fbf9683f9aba5278644bc62b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-5b5573c788f12d9da75918c51b149e3675a7e61d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\libs\gson-2.2.4.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\gson-2.2.4-648f8a6d563a38e4a41a7d46af65545e08a236c1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-6d9422520698f13a660a961fe413d000e9041db4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-3f512dccc58c0ea0c08b67174ee6c14aef0c174b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-98fcd94ab92c8a8b382ae06b1e1d9de47b6060ca.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-2ed108bb25c8b787a8ec4ac35e1ac858f2256bed.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-247658ad2963cd0884ecf8c0bc9cf24bb5ad5f0f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\libs\httpcore-4.3.2.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="31fbbff1ddbf98f3aa7377c94d33b0447c646b6e">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\httpcore-4.3.2-17877ca3f0778a56f5e2258eca84ff15d3641a1f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-d5a800e7c2c0a823bb538e6840c0c76a6e01ed45.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-7db0ba7c6ac758acf53226b714d658129683b4a4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\libs\httpmime-4.3.2.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="3202421d9425ced69919b282afa644e7ef0e8fef">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\httpmime-4.3.2-5fc3efe2ccbf56dd8525c017d56fdc310c6ca274.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-125cb7f8e3de0921a187ffcdd866de845197ede6.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.0.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-948bb2b932f8d68b8c1f14122d98330a1a7ecab3.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-bc1210f8943e81d3b8c9eac6856d51c3c67de5bb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-7e0b41002397551b715bb1f3db9e46dd4b18b1cd.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-1eed74a21a1fc71e8c5e75c93fa5c4345b658139.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-0e1c2a73dd1f93e19b904c0f9267c7268f8ce374.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-0827cc1f7d650f13ee54f384f3e668a6315797e7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-15b660fd2b06d0849d46d8f09fdd2da579d4414f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc3"
+        revision="23.0.0"
         sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\Blynked\app\build\intermediates\pre-dexed\debug\classes-058cac4f96f7de8194d3382e178264f594434251.jar" />
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-a1b6d6e5a370634e2b539fb2a6a62ac02762ecca.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-92b34859fdb9c33181366431c6573a334c348b10.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-5c0b23ea50ed4be3bf45673fa0aa853dde45364f.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-c59b45bcdc3005d626fb9a00d1d75de513dc4809.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-3d1d604019432368858a8d6bb0e19c0c3d8e1381.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-17b75d90987c74c83e8e88b79d0408ad56f5e685.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-dfec6b2b59e10359833511ef89617b9d93c96be7.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-71b59aee85be2dade3e219f7c5bae47cb3dd463d.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-5451477009ebaf39303561e76853dc4b17668c1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\IXEET PC 9\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-efe08aa3b4669dfed8731d39af8141b0849d3c96.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-a48f90aa0990b21bd2a76aae1c7f6400055e56a7.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-bfa0cf38da6c8286b87fca55fac0119f60d6c85f.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\commons-io-2.4-e5a53186f0b00bbf4d0e504427c591c4577a91d0.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-8d2d3cddc4a64e150858c06c2c19f24b09820c3d.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-73741916e1055bb6f6cf1ff59f57ceccabbd7576.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\libs\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\gson-2.2.4-2a2a7199ae1d93f0882d9a19fd30c9529c439cb1.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-eebd0e7c1780298011b9a5b1fd1fedbed589fb63.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-293c3db6bcd536d804a525ffa28189e5522fdd8f.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-715659c70940bd5b1ed38ac79be7f9f7e5161a6c.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-66c0894634cb9774991ca078ad41becbb50c8d68.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.facebook.android\facebook\4.4.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e9c42d8b365f2953cdb2869dbd523c7c3feb38b2">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-fd42d5e07095d98f5e16b098fa7ebe7f269a61fe.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-65c08b64940d35aa3e9606bd5da7acf14076ee26.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-0fa825281a7e22662a833cb7b6b80c828f23745a.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-ac5f35943e26625ed52867c404d98472b21bda25.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\libs\httpmime-4.3.2.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="3202421d9425ced69919b282afa644e7ef0e8fef">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\httpmime-4.3.2-0bca2df5f84d2fe828e2933daa9a13e6ddb79f86.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-ff666f870b495fe3543566d8debe70abbdf00933.jar" />
+    </item>
+    <item
+        jar="C:\Users\IXEET PC 9\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.0-567eb14432df7a9a3a241a6b6d1deeeb49ab736d.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-3cfd7ebf101234d045773c608d56679149a792da.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-f6eb8ebc05f39280c7bd5acd7541361a96fe2bbf.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-c00623013f76cae6f1fe1bf66101f350194c0c8a.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\classes-6d5725fcf6e8a463ab0a191668e2bc6a291bb454.jar" />
+    </item>
+    <item
+        jar="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\libs\httpcore-4.3.2.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="31fbbff1ddbf98f3aa7377c94d33b0447c646b6e">
+        <dex dex="E:\19 latest\17octt blynked frm pc\Blynked\Blynked\app\build\intermediates\pre-dexed\debug\httpcore-4.3.2-1a71517e3418f0874dc56aa6babde39a06b68f1d.jar" />
     </item>
 
 </items>

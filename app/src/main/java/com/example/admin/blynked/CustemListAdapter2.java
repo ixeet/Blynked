@@ -122,7 +122,7 @@ public class CustemListAdapter2 extends BaseAdapter {
                         pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                                 PackageManager.DONT_KILL_APP);
                         Toast.makeText(context, "activated", Toast.LENGTH_LONG).show();*/
-                        Toast.makeText(context,"broadcast my speed",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(context,"broadcast my speed",Toast.LENGTH_LONG).show();
                         g.setb(1);
 
                     }
@@ -132,7 +132,7 @@ public class CustemListAdapter2 extends BaseAdapter {
                         pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                                 PackageManager.DONT_KILL_APP);
                         Toast.makeText(getApplicationContext(), "cancelled", Toast.LENGTH_LONG).show();*/
-                        Toast.makeText(context,"not broadcast my speed",Toast.LENGTH_LONG).show();
+                       // Toast.makeText(context,"not broadcast my speed",Toast.LENGTH_LONG).show();
                         g.setb(0);
 
                     }
@@ -152,11 +152,11 @@ public class CustemListAdapter2 extends BaseAdapter {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if (b) {
-                        Toast.makeText(context,"arrival expire",Toast.LENGTH_LONG).show();
+                      //  Toast.makeText(context,"arrival expire",Toast.LENGTH_LONG).show();
                         g.setexp(1);
                     }
                     else {
-                        Toast.makeText(context,"not arrival expire",Toast.LENGTH_LONG).show();
+                       // Toast.makeText(context,"not arrival expire",Toast.LENGTH_LONG).show();
                         g.setexp(0);
                     }
                 }

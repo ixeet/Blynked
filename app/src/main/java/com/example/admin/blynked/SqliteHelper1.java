@@ -68,12 +68,13 @@ public class SqliteHelper1 extends SQLiteOpenHelper {
         } else { // Record exists
             result = db.update("histr", contentValues, "id=?", new String[] { id });
         }
-
+        cursor.close();
         if (result == -1) {
             return false;
         } else {
             return true;
         }
+
     }
     public void update(String id, int flag ) {
         SQLiteDatabase db= this.getWritableDatabase();

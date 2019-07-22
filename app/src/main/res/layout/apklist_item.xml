@@ -13,10 +13,5 @@ android:layout_height="70dp"
         android:layout_gravity="center"
 android:padding="15dp"
         android:textStyle="bold" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/appname"
 
-        android:background="#ff11a3f1" />
     </RelativeLayout>

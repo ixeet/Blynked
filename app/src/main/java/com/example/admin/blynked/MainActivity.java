@@ -195,6 +195,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Timer;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
 import android.widget.RelativeLayout.LayoutParams;
 
 public class MainActivity extends ActionBarActivity implements LocationListener, OnMapReadyCallback {
@@ -221,6 +226,7 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
     private int mTitle = R.string.app_name;
     Bitmap selectedImage;
     public static final String STORAGE_IMAGE = "Image";
+    public static final String STORAGE_LOC = "location";
     Integer[] img_id = {
             R.mipmap.icn_share_menu_drawer,
             R.mipmap.icn_share_menu_drawer,
@@ -235,10 +241,12 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
 
 
     };
-    String pk;
+    String userName;
+ String clat,clong;
+    Double clat1,clong1;
     Sharesqlite sqliteHelper;
     float speed;
-    final String[] items = {"Priyanka", "Ankur", "Ankit"};
+
     final boolean[] selected = {false, false, false};
     ProgressDialog pDialog;
     private static final CharSequence[] MAP_TYPE_ITEMS =
@@ -282,7 +290,7 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
     String id;
     LocationManager locationManager;
     String selState;
-    String bestProvider;
+    String bestProvider,imei;
     SupportMapFragment supportMapFragment;
     Button share;
     Handler mHandler;
@@ -308,15 +316,17 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
     Button sharem,requestm,favm;
     SqliteHelper4 sqliteHelper4;
     public static final String STORAGE1 = "SenddataPreferences";
+    public static final String STORAGE_IMEI = "SaveIMEI";
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        g = (Globals)getApplication();
     if (!isGooglePlayServicesAvailable()) {
         finish();
     }
-
+        final ScheduledExecutorService scheduler =
+                Executors.newSingleThreadScheduledExecutor();
         statusCheck();
         sqliteHelper4 = new SqliteHelper4(this);
         sqliteHelper = new Sharesqlite(this);
@@ -325,6 +335,19 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+        data1 = getIntent().getDataString();
+        if(data1!=null) {
+
+            //  String data11=data1.toString();
+            imei = data1.substring(data1.length() - 15);
+            g.setshare(2);
+            SharedPreferences sharedPreferences1 =getSharedPreferences(STORAGE_IMEI, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences1.edit();
+            editor.putString("imei",imei);
+            editor.apply();
+
+        }
+
        /* state1=hasActiveInternetConnection();
         Toast.makeText(getApplicationContext(),""+state1,Toast.LENGTH_LONG).show();*/
 
@@ -358,21 +381,11 @@ public class MainActivity extends ActionBarActivity implements LocationListener,
         me=(TextView)findViewById(R.id.me);
         st=(TextView)findViewById(R.id.st);
         spd=(TextView)findViewById(R.id.spd);
-        g = (Globals)getApplication();
-        data1 = getIntent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).getDataString();
-        /*String url =
 
-                "http://191.239.57.54:8080/Blynk/getLocationByImeiNo";
+       /* data1 = getIntent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).getDataString();
 
-        URL myUrl = null;
-        try {
-            myUrl = new URL(url);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        String h=myUrl.getHost();
-        Toast.makeText(getApplicationContext(),"Host is"+h, Toast.LENGTH_LONG).show();*/
-        if(data1!=null)
+
+      if(data1!=null)
         {
 
           //  String data11=data1.toString();
@@ -413,8 +426,8 @@ String idd=""+g.gets();
             try {
                 JSONArray jArray = new JSONArray(c);
                 Parent.put("IMEI", jArray);
-                /*Toast.makeText(getApplicationContext(), "" + Parent, Toast.LENGTH_LONG).show();
-                Log.d("araaa",Parent.toString());*/
+                Toast.makeText(getApplicationContext(), "" + Parent, Toast.LENGTH_LONG).show();
+                Log.d("araaa",Parent.toString());
                 HttpClient client = new DefaultHttpClient();
                 HttpPost post = new HttpPost(SHARE_URL);
                 StringEntity se = new StringEntity( Parent.toString());
@@ -449,7 +462,7 @@ String idd=""+g.gets();
         else
         {
            // Toast.makeText(getApplicationContext(), "No data", Toast.LENGTH_LONG).show();
-        }
+        }*/
         //if(!data.equals("null")) {
           //
       //  }
@@ -1372,8 +1385,99 @@ String idd=""+g.gets();
 
             builder1.create().show();
         }*/
+        if(g.getshare()==2) {
 
 
+            scheduler.scheduleAtFixedRate(new Runnable() {
+
+                public void run() {
+                    Log.i("hello", "world");
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            SharedPreferences sharedPreferences = getSharedPreferences(STORAGE_IMEI, Context.MODE_PRIVATE);
+
+                            imei = sharedPreferences.getString("imei", "");
+                            g.setshare(1);
+                            new GetLoc().execute();
+
+                            SharedPreferences sharedPreferences1 = getSharedPreferences(STORAGE_LOC, Context.MODE_PRIVATE);
+
+                            clat = sharedPreferences1.getString("clat", "");
+                            clong= sharedPreferences1.getString("clong","");
+                            userName = sharedPreferences1.getString("userName", "");
+                            if(!clat.equals("")) {
+                                 clat1 = Double.parseDouble(clat);
+                                 clong1 = Double.parseDouble(clong);
+                                map.clear();
+                                Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.proff);
+                                View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
+                                ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
+                                ivv.setImageBitmap(icon);
+                                // ivv.setImageBitmap(decodeBase64(imagePreferance));
+                                //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
+                                //  numTxt.setText("27");
+                                customMarker = map.addMarker(new MarkerOptions()
+                                        .position(
+                                                new LatLng(clat1, clong1)).title(userName).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(MainActivity.this, marker))));
+                                //marker.setIcon(icon1);
+
+
+                                customMarker.showInfoWindow();
+                                map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                                    public boolean onMarkerClick(Marker marker) {
+                                        // Check if there is an open info window
+                                        if (lastOpenned != null) {
+                                            // Close the info window
+                                            lastOpenned.hideInfoWindow();
+
+                                            // Is the marker the same marker that was already open
+                                            if (lastOpenned.equals(marker)) {
+                                                // Nullify the lastOpenned object
+                                                lastOpenned = null;
+                                                // Return so that the info window isn't openned again
+                                                return true;
+                                            }
+                                        }
+
+                                        // Open the info window for the marker
+                                        customMarker.showInfoWindow();
+                                        // Re-assign the last openned such that we can close it later
+                                        lastOpenned = customMarker;
+
+                                        // Event was handled by our code do not launch default behaviour.
+                                        return true;
+                                    }
+                                });
+
+                                map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                                        new LatLng(clat1, clong1), 15));
+                                me.setText("You are viewing location of "+userName);
+                                spd.setVisibility(View.GONE);
+                                st.setVisibility(View.GONE);
+                                 }
+                           // Toast.makeText(getApplicationContext(), ""+clat+""+clong+""+userName, Toast.LENGTH_LONG).show();
+                          //  Toast.makeText(getApplicationContext(), imei, Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                }
+            }, 0, 10, TimeUnit.SECONDS);
+            scheduler.schedule(new Runnable() {
+                public void run() {
+                    SharedPreferences shared1 = getSharedPreferences(STORAGE_LOC, Context.MODE_PRIVATE);
+
+                    SharedPreferences.Editor editorr = shared1.edit();
+
+                    editorr.clear();
+                    editorr.commit();
+                    g.setshare(0);
+                    Log.d("Stopped",""+g.getshare());
+                    scheduler.shutdown();
+
+
+                }
+            }, 65, TimeUnit.SECONDS);
+        }
     }
 
 
@@ -1577,6 +1681,66 @@ String idd=""+g.gets();
         bestProvider = locationManager.getBestProvider(criteria, true);
         location = locationManager.getLastKnownLocation(bestProvider);
         ll = location;
+        //Toast.makeText(getApplicationContext(),"Sharedglob is"+g.getshare(),Toast.LENGTH_LONG).show();
+        if(g.getshare()==1)
+        {
+            SharedPreferences sharedPreferences1 = getSharedPreferences(STORAGE_LOC, Context.MODE_PRIVATE);
+
+            clat = sharedPreferences1.getString("clat", "");
+            clong= sharedPreferences1.getString("clong","");
+            userName = sharedPreferences1.getString("userName", "");
+          //  Toast.makeText(getApplicationContext(),"onMap ready"+clat+clong,Toast.LENGTH_LONG).show();
+            if(!clat.equals("")) {
+                clat1 = Double.parseDouble(clat);
+                clong1 = Double.parseDouble(clong);
+
+                Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.proff);
+                View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
+                ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
+                ivv.setImageBitmap(icon);
+                // ivv.setImageBitmap(decodeBase64(imagePreferance));
+                //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
+                //  numTxt.setText("27");
+                customMarker = map.addMarker(new MarkerOptions()
+                        .position(
+                                new LatLng(clat1, clong1)).title(userName).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(MainActivity.this, marker))));
+                //marker.setIcon(icon1);
+
+
+                customMarker.showInfoWindow();
+                map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    public boolean onMarkerClick(Marker marker) {
+                        // Check if there is an open info window
+                        if (lastOpenned != null) {
+                            // Close the info window
+                            lastOpenned.hideInfoWindow();
+
+                            // Is the marker the same marker that was already open
+                            if (lastOpenned.equals(marker)) {
+                                // Nullify the lastOpenned object
+                                lastOpenned = null;
+                                // Return so that the info window isn't openned again
+                                return true;
+                            }
+                        }
+
+                        // Open the info window for the marker
+                        customMarker.showInfoWindow();
+                        // Re-assign the last openned such that we can close it later
+                        lastOpenned = customMarker;
+
+                        // Event was handled by our code do not launch default behaviour.
+                        return true;
+                    }
+                });
+
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                        new LatLng(clat1, clong1), 15));
+                me.setText("You are viewing location of "+userName);
+                spd.setVisibility(View.GONE);
+                st.setVisibility(View.GONE);
+            }
+        }
      /*   if(g.getyes()==1)
         {
 
@@ -1955,15 +2119,15 @@ String idd=""+g.gets();
     public void onLocationChanged(Location location1) {
         //  TextView locationTv = (TextView) findViewById(R.id.latlongLocation);
          speed=location1.getSpeed()*3600/1000;
-        if(g.getyes()==0)
+        if(g.getshare()!=1)
 
       if(location1!=null) {
-            double latitude = location1.getLatitude();
-            double longitude = location1.getLongitude();
-            //spd.setText(""+location1.getSpeed()*3600/1000 +"km/h");
-            //   Toast.makeText(getApplicationContext(),""+location.getSpeed(), Toast.LENGTH_LONG).show();
+          double latitude = location1.getLatitude();
+          double longitude = location1.getLongitude();
+          //spd.setText(""+location1.getSpeed()*3600/1000 +"km/h");
+          //   Toast.makeText(getApplicationContext(),""+location.getSpeed(), Toast.LENGTH_LONG).show();
 
-            //  googleMap.addMarker(new MarkerOptions().position(latLng));
+          //  googleMap.addMarker(new MarkerOptions().position(latLng));
     /*   MarkerOptions mp = new MarkerOptions();
 
             mp.position(new LatLng(location.getLatitude(), location.getLongitude()));
@@ -1971,65 +2135,67 @@ String idd=""+g.gets();
             mp.title("priyanka");
 
             googleMap.addMarker(mp);*/
-            geocoder = new Geocoder(this, Locale.getDefault());
-            try {
-                addresses = geocoder.getFromLocation(location1.getLatitude(), location1.getLongitude(), 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+          geocoder = new Geocoder(this, Locale.getDefault());
+          try {
+              addresses = geocoder.getFromLocation(location1.getLatitude(), location1.getLongitude(), 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
 
-                address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-                city = addresses.get(0).getLocality();
-                state = addresses.get(0).getAdminArea();
-                country = addresses.get(0).getCountryName();
-                String postalCode = addresses.get(0).getPostalCode();
-                knownName = addresses.get(0).getFeatureName();
-            } catch (Exception e) {
+              address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+              city = addresses.get(0).getLocality();
+              state = addresses.get(0).getAdminArea();
+              country = addresses.get(0).getCountryName();
+              String postalCode = addresses.get(0).getPostalCode();
+              knownName = addresses.get(0).getFeatureName();
+          } catch (Exception e) {
 
-            }
+          }
 
-            // Toast.makeText(getApplicationContext(),name, Toast.LENGTH_LONG).show();
-            lp = address + "," + city + "," + country;
-            map.clear();
+          // Toast.makeText(getApplicationContext(),name, Toast.LENGTH_LONG).show();
+          lp = address + "," + city + "," + country;
 
-            View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
-            ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
-            ivv.setImageBitmap(decodeBase64(imagePreferance));
-            //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
-            //  numTxt.setText("27");
-            customMarker = map.addMarker(new MarkerOptions()
-                    .position(
-                            new LatLng(location1.getLatitude(), location1
-                                    .getLongitude())).title(name).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
-            //marker.setIcon(icon1);
+              map.clear();
+
+              View marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_layout, null);
+              ImageView ivv = (ImageView) marker.findViewById(R.id.num_txt);
+              ivv.setImageBitmap(decodeBase64(imagePreferance));
+              //  TextView numTxt = (TextView) marker.findViewById(R.id.num_txt);
+              //  numTxt.setText("27");
+              customMarker = map.addMarker(new MarkerOptions()
+                      .position(
+                              new LatLng(location1.getLatitude(), location1
+                                      .getLongitude())).title(name).icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, marker))));
+              //marker.setIcon(icon1);
 
 
-            customMarker.showInfoWindow();
-            map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                public boolean onMarkerClick(Marker marker) {
-                    // Check if there is an open info window
-                    if (lastOpenned != null) {
-                        // Close the info window
-                        lastOpenned.hideInfoWindow();
+              customMarker.showInfoWindow();
+              map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                  public boolean onMarkerClick(Marker marker) {
+                      // Check if there is an open info window
+                      if (lastOpenned != null) {
+                          // Close the info window
+                          lastOpenned.hideInfoWindow();
 
-                        // Is the marker the same marker that was already open
-                        if (lastOpenned.equals(marker)) {
-                            // Nullify the lastOpenned object
-                            lastOpenned = null;
-                            // Return so that the info window isn't openned again
-                            return true;
-                        }
-                    }
+                          // Is the marker the same marker that was already open
+                          if (lastOpenned.equals(marker)) {
+                              // Nullify the lastOpenned object
+                              lastOpenned = null;
+                              // Return so that the info window isn't openned again
+                              return true;
+                          }
+                      }
 
-                    // Open the info window for the marker
-                    customMarker.showInfoWindow();
-                    // Re-assign the last openned such that we can close it later
-                    lastOpenned =customMarker;
+                      // Open the info window for the marker
+                      customMarker.showInfoWindow();
+                      // Re-assign the last openned such that we can close it later
+                      lastOpenned = customMarker;
 
-                    // Event was handled by our code do not launch default behaviour.
-                    return true;
-                }
-            });
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(
-                    new LatLng(location1.getLatitude(), location1.getLongitude()), 15));
-        }
+                      // Event was handled by our code do not launch default behaviour.
+                      return true;
+                  }
+              });
+              map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                      new LatLng(location1.getLatitude(), location1.getLongitude()), 15));
+          }
+
         else
         {
             Toast.makeText(getApplicationContext(), "Location is not available now.Please wait for some time.", Toast.LENGTH_LONG).show();
@@ -2124,118 +2290,6 @@ String idd=""+g.gets();
 
 
 
-    /*private class PlacesAutoCompleteAdapter extends ArrayAdapter<String> implements Filterable {
-        private ArrayList<String> resultList;
-
-        public PlacesAutoCompleteAdapter(Context context, int textViewResourceId) {
-            super(context, textViewResourceId);
-        }
-
-        @Override
-        public int getCount() {
-            return resultList.size();
-        }
-
-        @Override
-        public String getItem(int index) {
-            return resultList.get(index);
-        }
-
-        @Override
-        public Filter getFilter() {
-            Filter filter = new Filter() {
-                @Override
-                protected FilterResults performFiltering(CharSequence constraint) {
-                    FilterResults filterResults = new FilterResults();
-                    if (constraint != null) {
-                        // Retrieve the autocomplete results.
-                        resultList = autocomplete(constraint.toString());
-
-                        // Assign the data to the FilterResults
-                        filterResults.values = resultList;
-                        filterResults.count = resultList.size();
-                    }
-                    return filterResults;
-                }
-
-                @Override
-                protected void publishResults(CharSequence constraint, FilterResults results) {
-                    if (results != null && results.count > 0) {
-                        notifyDataSetChanged();
-                    } else {
-                        notifyDataSetInvalidated();
-                    }
-                }
-            };
-            return filter;
-        }
-    }*/
-
-  /*  private ArrayList<String> autocomplete(String input) {
-        ArrayList<String> resultList = null;
-
-        HttpURLConnection conn = null;
-        StringBuilder jsonResults = new StringBuilder();
-        try {
-            StringBuilder sb = new StringBuilder(PLACES_API_BASE + TYPE_AUTOCOMPLETE + OUT_JSON);
-            sb.append("?key=" + API_KEY);
-            // sb.append("&components=country:in");
-            sb.append("&input=" + URLEncoder.encode(input, "utf8"));
-            //String input = "input="+place;
-            sb.append("&types=geocode");
-            // place type to be searched
-            //  String types = "types=geocode";
-            // sb.append("&sensor=false");
-            // Sensor enabled
-            // String sensor = "sensor=false";
-
-            // Building the parameters to the web service
-            // String parameters = input+"&"+types+"&"+sensor+"&"+key;
-
-            // Output format
-            //String output = "json";
-
-            // Building the url to the web service
-            //String url = "https://maps.googleapis.com/maps/api/place/autocomplete/"+output+"?"+parameters;
-            URL url = new URL(sb.toString());
-            conn = (HttpURLConnection) url.openConnection();
-            InputStreamReader in = new InputStreamReader(conn.getInputStream());
-
-            // Load the results into a StringBuilder
-            int read;
-            char[] buff = new char[1024];
-            while ((read = in.read(buff)) != -1) {
-                jsonResults.append(buff, 0, read);
-            }
-        } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "Error processing Places API URL", e);
-            return resultList;
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "Error connecting to Places API", e);
-            return resultList;
-        } finally {
-            if (conn != null) {
-                conn.disconnect();
-            }
-        }
-
-        try {
-            // Create a JSON object hierarchy from the results
-            JSONObject jsonObj = new JSONObject(jsonResults.toString());
-            JSONArray predsJsonArray = jsonObj.getJSONArray("predictions");
-
-            // Extract the Place descriptions from the results
-            resultList = new ArrayList<String>(predsJsonArray.length());
-            for (int i = 0; i < predsJsonArray.length(); i++) {
-                resultList.add(predsJsonArray.getJSONObject(i).getString("description"));
-            }
-        } catch (JSONException e) {
-            Log.e(LOG_TAG, "Cannot process JSON results", e);
-        }
-
-        return resultList;
-    }
-*/
     String[] Timed(String start, String end) {
         // ArrayList<String> resultList = null;
         String[] arr = new String[2];
@@ -2353,5 +2407,75 @@ String idd=""+g.gets();
         else
             return false;
 
+    }
+    class GetLoc extends AsyncTask<String, String, String> {
+
+        boolean failure = false;
+        String gender;
+        int mflag, eflag;
+        int success;
+        int bg;
+        String c = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar = (CircleProgressBar) findViewById(R.id.pBar);
+            progressBar.setColorSchemeResources(android.R.color.holo_blue_light);
+            progressBar.setProgress(0);
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected String doInBackground(String... args) {
+            // TODO Auto-generated method stub
+            // Check for success tag
+
+            String REGISTER_URL = "http://191.239.57.54:8080/Blynk/getShareLocation?imeiNo="+imei;
+
+            GetJsonObject json=new GetJsonObject();
+            String response =json.getWebServceObj(REGISTER_URL);
+            Log.d("Shareee",response);
+            try {
+                JSONObject jsonResponse = new JSONObject(response);
+                if(jsonResponse.getString("status").equals("success")){
+                    c="success";
+                    JSONArray jsonDistArr = jsonResponse.getJSONArray("userDetailList");
+                    //districIdArr = new int[jsonDistArr.length()];
+                    //dname = new String[jsonDistArr.length()];
+                    for(int i=0;i<jsonDistArr.length();i++){
+                        JSONObject jsonDisObj = jsonDistArr.getJSONObject(i);
+                       // String areaList = jsonDisObj.getJSONArray("areaList").toString();
+                        clat = jsonDisObj.getString("currentLocationLat");
+                        clong=jsonDisObj.getString("currentLocationLong");
+                        userName=jsonDisObj.getString("userName");
+
+      Log.d("Shared loc data",clat+""+clong+" "+userName);
+                    }
+                    SharedPreferences sharedPreferences1 =getSharedPreferences(STORAGE_LOC, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences1.edit();
+                    editor.putString("clat",clat);
+                    editor.putString("clong",clong);
+                    editor.putString("userName",userName);
+                    editor.apply();
+                    editor.commit();
+                    //  dname = list.toArray(new String[list.size()]);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return c;
+
+        }
+
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once product deleted
+
+            progressBar.setVisibility(View.INVISIBLE);
+           // Toast.makeText(getApplicationContext(),clat+clong+userName,Toast.LENGTH_LONG).show();
+
+         //
+        }
     }
 }

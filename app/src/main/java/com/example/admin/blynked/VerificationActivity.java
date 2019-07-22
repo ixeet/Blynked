@@ -121,7 +121,7 @@ public class VerificationActivity extends Activity {
                 }*/
             }
         });
-        sendBroadcastReceiver = new BroadcastReceiver()
+        /*sendBroadcastReceiver = new BroadcastReceiver()
         {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
@@ -149,7 +149,7 @@ public class VerificationActivity extends Activity {
                 }
             }
         };
-        registerReceiver(sendBroadcastReceiver , new IntentFilter(SENT));
+        registerReceiver(sendBroadcastReceiver , new IntentFilter(SENT));*/
 
     }
     private void sendSMS(String phoneNumber, String message)
